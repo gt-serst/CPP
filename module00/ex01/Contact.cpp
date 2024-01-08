@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:59:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/05 18:15:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/08 14:50:27 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	Contact::setNickName(std::string str){
 	return;
 }
 
-void	Contact::setPhoneNumber(int i){
+void	Contact::setPhoneNumber(std::string str){
 
-	this->_phone_number = i;
+	this->_phone_number = str;
 	return;
 }
 
@@ -63,7 +63,7 @@ std::string	Contact::getNickName(void) const{
 	return this->_nick_name;
 }
 
-int	Contact::getPhoneNumber(void) const{
+std::string	Contact::getPhoneNumber(void) const{
 
 	return this->_phone_number;
 }

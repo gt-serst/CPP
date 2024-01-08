@@ -6,20 +6,24 @@
 #    By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/01/08 17:28:18 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/01/08 17:46:37 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= megaphone.cpp
+SRCS	= main.cpp\
+		  PhoneBook.cpp\
+		  Contact.cpp
 
-NAME	= megaphone
+INC		= -I
+
+NAME	= phonebook
 
 FLAGS	= -Wall -Wextra -Werror
 
 OBJS	= ${SRCS:.cpp=.o}
 
 ${NAME} : ${OBJS}
-					c++ ${FLAGS} $(OBJS) -o $(NAME)
+					c++ ${FLAGS} $(INC) $(OBJS) -o $(NAME)
 
 all		: ${NAME}
 
