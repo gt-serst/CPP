@@ -18,20 +18,22 @@
 int	main(int argc, char **argv)
 {
 	PhoneBook	phonebook;
-	std::string str;
-	int			i;
+	std::string	str;
+	int		contact_number;
 
 	(void)argc;
 	(void)argv;
-	i = 0;
+	contact_number = 0;
 	while (1)
 	{
 		std::cin >> str;
 		if (str.compare("ADD") == 0)
 		{
 			Contact	contact;
-			phonebook.appendContact(contact, i);
-			i++;
+			phonebook.appendContact(contact, contact_number);
+			contact_number++;
+			if (contact_number == 7)
+				contact_number = 0;
 		}
 		if (str.compare("SEARCH") == 0)
 			phonebook.printPhoneBook();

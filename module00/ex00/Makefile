@@ -14,7 +14,7 @@ SRCS	= megaphone.cpp
 
 NAME	= megaphone
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 OBJS	= ${SRCS:.cpp=.o}
 

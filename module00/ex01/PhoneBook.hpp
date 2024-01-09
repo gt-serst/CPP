@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <limits>
+#include <ios>
 #include "Contact.hpp"
 
 class PhoneBook{

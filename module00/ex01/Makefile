@@ -14,16 +14,14 @@ SRCS	= main.cpp\
 		  PhoneBook.cpp\
 		  Contact.cpp
 
-INC		= -I
-
 NAME	= phonebook
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 OBJS	= ${SRCS:.cpp=.o}
 
 ${NAME} : ${OBJS}
-					c++ ${FLAGS} $(INC) $(OBJS) -o $(NAME)
+					c++ ${FLAGS} $(OBJS) -o $(NAME)
 
 all		: ${NAME}
 

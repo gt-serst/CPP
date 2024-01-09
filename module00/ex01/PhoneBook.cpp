@@ -18,29 +18,26 @@ PhoneBook::PhoneBook(void){
 	return;
 }
 
-void	PhoneBook::appendContact(Contact contact, int i){
-
+void	PhoneBook::appendContact(Contact contact, int contact_number){
+	
 	std::string	buff;
 
-	if (i == 8)
-		this->_contact[0] = contact;
-	else
-		this->_contact[i] = contact;
+	this->_contact[contact_number] = contact;
 	std::cout << "Insert your first name: ";
 	std::cin >> buff;
-	this->_contact[i].setFirstName(buff);
+	this->_contact[contact_number].setFirstName(buff);
 	std::cout << "Insert your last name: ";
 	std::cin >> buff;
-	this->_contact[i].setLastName(buff);
+	this->_contact[contact_number].setLastName(buff);
 	std::cout << "Insert your nick name: ";
 	std::cin >> buff;
-	this->_contact[i].setNickName(buff);
+	this->_contact[contact_number].setNickName(buff);
 	std::cout << "Insert your phone number: ";
 	std::cin >> buff;
-	this->_contact[i].setPhoneNumber(buff);
+	this->_contact[contact_number].setPhoneNumber(buff);
 	std::cout << "Insert your darkest secret ";
 	std::cin >> buff;
-	this->_contact[i].setDarkestSecret(buff);
+	this->_contact[contact_number].setDarkestSecret(buff);
 }
 
 void	PhoneBook::printPhoneBook(void) const
@@ -54,6 +51,8 @@ void	PhoneBook::printPhoneBook(void) const
 	std::cout << "     Index|First name| Last name| Nick name" << std::endl;
 	while (i < 7)
 	{
+		if (_contact[i].getFirstName().empty())
+			break;
 		std::cout << "         " << i << "|";
 		str = _contact[i].getFirstName();
 		len = str.length();
@@ -119,6 +118,11 @@ void	PhoneBook::askLineNumberToDisplay(void) const
 	{
 		std::cout << "Invalid input. You inserted a number outside of the array" << std::endl;
 		return ;
+	}
+	if (_contact[i].getFirstName().empty())
+	{
+		std::cout << "Contact does not exist" << std::endl;
+		return;
 	}
 	std::cout << "First name: " << _contact[i].getFirstName() << std::endl;
 	std::cout << "Last name: " << _contact[i].getLastName() << std::endl;
