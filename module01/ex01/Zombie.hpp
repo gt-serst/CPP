@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 14:50:15 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/10 13:51:43 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/11 15:04:08 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	main(int argc, char **argv)
-{
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
-	(void)argc;
-	(void)argv;
-	return (0);
-}
+#include <string>
+#include <iostream>
+
+class Zombie{
+
+	public:
+		Zombie();
+		Zombie(std::string const zombie_name);
+		~Zombie(void);
+		void	announce(void) const;
+	private:
+		std::string	_name;
+};
+
+Zombie*	zombieHorde(int N, std::string name);
+
+#endif

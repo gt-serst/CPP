@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 14:50:15 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:04:10 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
+	Zombie*	zombieHordePtr = zombieHorde(5, "Bilbon");
+	delete [] zombieHordePtr;
 	(void)argc;
 	(void)argv;
 	return (0);
