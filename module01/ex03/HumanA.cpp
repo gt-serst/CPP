@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 18:08:06 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/11 17:49:08 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/12 11:15:31 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "HumanA.hpp"
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+HumanA::HumanA(std::string humanName, Weapon& weaponREF) : _name(humanName), _weapon(weaponREF){
 
-class PhoneBook{
+	std::cout << "Constructor called for HumanA" << std::endl;
+	return;
+}
 
-	public:
-		PhoneBook(void);
-		void	appendContact(Contact contact, int i);
-		void	printPhoneBook(void) const;
-		void	askLineNumberToDisplay(void) const;
-	private:
-		Contact	_contact[9];
-};
+HumanA::~HumanA(void){
 
-#endif
+	std::cout << "Destructor called for HumanA" << std::endl;
+	return;
+}
+
+void	HumanA::attack(void){
+
+	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
+}
+

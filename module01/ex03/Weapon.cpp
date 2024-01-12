@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 18:08:06 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/11 17:38:51 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/12 11:20:02 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "Weapon.hpp"
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+Weapon::Weapon(std::string weaponType) : _type(weaponType){
 
-class PhoneBook{
+	std::cout << "Constructor called for Weapon" << std::endl;
+	return;
+}
 
-	public:
-		PhoneBook(void);
-		void	appendContact(Contact contact, int i);
-		void	printPhoneBook(void) const;
-		void	askLineNumberToDisplay(void) const;
-	private:
-		Contact	_contact[9];
-};
+Weapon::~Weapon(void){
 
-#endif
+	std::cout << "Destructor called for Weapon" << std::endl;
+	return;
+}
+
+std::string const &	Weapon::getType(){
+
+	return this->_type;
+}
+
+void	Weapon::setType(std::string newType){
+
+	this->_type = newType;
+	return;
+}
+
+

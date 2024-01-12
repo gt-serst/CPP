@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   write_of.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 18:08:06 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/12 14:03:49 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/12 15:51:52 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-
 #include <string>
 #include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+#include <fstream>
 
-class PhoneBook{
-
-	public:
-		PhoneBook(void);
-		void	appendContact(Contact contact, int i);
-		void	printPhoneBook(void) const;
-		void	askLineNumberToDisplay(void) const;
-	private:
-		Contact	_contact[9];
-};
-
-#endif
+bool	write_of(std::string filename, std::string buf2)
+{
+	std::ofstream ofs(filename.append(".replace"));
+	if (ofs.is_open())
+	{
+		ofs << buf2;
+		ofs.close();
+	}
+	else
+	{
+		std::cout << "error: failed to create the file" << std::endl;
+		return (false);
+	}
+	return (true);
+}

@@ -5,40 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:11:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 18:07:49 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/11 18:02:48 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/12 11:36:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int	main(int argc, char **argv)
 {
-	PhoneBook	phonebook;
-	std::string	str;
-	int		contact_number;
-
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	(void)argc;
 	(void)argv;
-	contact_number = 0;
-	while (1)
-	{
-		std::cin >> str;
-		if (str.compare("ADD") == 0)
-		{
-			Contact	contact;
-			phonebook.appendContact(contact, contact_number);
-			contact_number++;
-			if (contact_number == 7)
-				contact_number = 0;
-		}
-		if (str.compare("SEARCH") == 0)
-			phonebook.printPhoneBook();
-		if (str.compare("EXIT") == 0)
-			exit(0);
-	}
 	return (0);
 }
