@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 11:21:48 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 11:43:01 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/15 12:44:10 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	Harl	instance;
-	Harl *	instancep = &instance;
+	Harl	harl;
 
-	void	(Harl::*f)(std::string level) const;
-
-	f = &Harl::complain;
-	(instancep->*f)("DEBUG");
-	(instancep->*f)("INFO");
-	(instancep->*f)("WARNING");
-	(instancep->*f)("ERROR");
+	harl.complain("INFO");
 	(void)argc;
 	(void)argv;
 	return (0);
