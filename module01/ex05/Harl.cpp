@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:33:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 13:30:32 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:54:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 Harl::Harl(void){
 
+	std::cout << "Constructor called" << std::endl;
 	return;
 }
 
 Harl::~Harl(void){
 
+	std::cout << "Destructor called" << std::endl;
 	return;
 }
 

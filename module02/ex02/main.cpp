@@ -5,40 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:11:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 16:17:11 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/16 10:33:53 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/16 15:16:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "Fixed.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	PhoneBook	phonebook;
-	std::string	str;
-	int			contact_number;
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	(void)argc;
-	(void)argv;
-	contact_number = 0;
-	while (1)
-	{
-		std::cin >> str;
-		if (str.compare("ADD") == 0)
-		{
-			Contact	contact;
-			phonebook.appendContact(contact, contact_number);
-			contact_number++;
-			if (contact_number == 8)
-				contact_number = 0;
-		}
-		if (str.compare("SEARCH") == 0)
-			phonebook.printPhoneBook();
-		if (str.compare("EXIT") == 0)
-			exit(0);
-	}
-	return (0);
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	
+	std::cout << b << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+
+	return 0;
 }

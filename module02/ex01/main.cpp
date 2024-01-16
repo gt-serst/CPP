@@ -5,40 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:11:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 16:17:11 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/16 10:33:53 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/16 11:46:34 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "Fixed.hpp"
 
-int	main(int argc, char **argv)
+int	main(void) 
 {
-	PhoneBook	phonebook;
-	std::string	str;
-	int			contact_number;
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
 
-	(void)argc;
-	(void)argv;
-	contact_number = 0;
-	while (1)
-	{
-		std::cin >> str;
-		if (str.compare("ADD") == 0)
-		{
-			Contact	contact;
-			phonebook.appendContact(contact, contact_number);
-			contact_number++;
-			if (contact_number == 8)
-				contact_number = 0;
-		}
-		if (str.compare("SEARCH") == 0)
-			phonebook.printPhoneBook();
-		if (str.compare("EXIT") == 0)
-			exit(0);
-	}
-	return (0);
+	a = Fixed( 1234.4321f );
+
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:59:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 17:54:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:58:53 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 Contact::Contact(void){
 
 	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
+Contact::~Contact(void){
+
+	std::cout << "Destructor called" << std::endl;
 	return;
 }
 

@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 14:37:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 14:50:52 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/16 15:23:02 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/16 15:27:13 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Point.hpp"
 
-int	main(int argc, char **argv)
-{
-	int	i;
-	int	j;
+Point::Point(void) : _x(0), _y(0){
 
-	if (argc > 1)
-	{
-		i = 1;
-		while (argv[i])
-		{
-			j = 0;
-			while (argv[i][j])
-			{
-				argv[i][j] = toupper(argv[i][j]);
-				j++;
-			}
-			std::cout << argv[i];
-			i++;
-		}
-		std::cout << std::endl;
-	}
-	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	return (0);
+	return;
+}
+
+Point::Point(float const f1, float const f2) : _x(f1), _y(f2){
+
+	return;
+}
+
+Point::Point(Point const & src){
+
+	*this = src;
+	return;
+}
+
+Point &	Point:operator=(Point const & rhs){
+}
+
+Point::~Point(void){
+
+	return;
 }

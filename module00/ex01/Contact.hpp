@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:49:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 18:06:39 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/15 15:44:50 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Contact{
 
 	public:
 		Contact(void);
+		~Contact(void);
 		void		setFirstName(std::string str);
 		void		setLastName(std::string str);
 		void		setNickName(std::string str);
