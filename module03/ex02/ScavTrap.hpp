@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:20:39 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/17 13:12:18 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 13:56:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+#include "ClapTrap.hpp"
 
-class PhoneBook{
+class ScavTrap : public ClapTrap{
 
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	appendContact(int i);
-		void	printPhoneBook(void) const;
-		void	printLine(std::string str) const;
-		void	printPhoneBookLine(void) const;
-	private:
-		Contact	_contact[8];
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap & src);
+		~ScavTrap(void);
+		void	attack(const std::string& target);
+		void	guardGate();
 };
 
 #endif

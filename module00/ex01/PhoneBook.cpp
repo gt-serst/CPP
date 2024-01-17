@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:44:02 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:59:02 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:20:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@ PhoneBook::~PhoneBook(void){
 	return;
 }
 
-void	PhoneBook::appendContact(Contact contact, int contact_number){
+void	PhoneBook::appendContact(int contact_number){
 
 	std::string	buff;
 
-	this->_contact[contact_number] = contact;
 	std::cout << "Insert your first name: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())

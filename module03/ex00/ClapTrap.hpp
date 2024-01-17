@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:20:39 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/17 12:22:04 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 13:12:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+# include <string>
 
-class PhoneBook{
+class ClapTrap{
 
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	appendContact(int i);
-		void	printPhoneBook(void) const;
-		void	printLine(std::string str) const;
-		void	printPhoneBookLine(void) const;
+		ClapTrap(void);
+		ClapTrap(std::string name);
+		ClapTrap(ClapTrap & src);
+		ClapTrap &	operator=(ClapTrap const & rhs);
+		~ClapTrap(void);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 	private:
-		Contact	_contact[8];
+		std::string	_name;
+		int	_hit_points;
+		int	_energy_points;
+		int	_attack_damage;
 };
 
 #endif

@@ -5,37 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:11:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:25:11 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/17 12:56:25 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 13:04:04 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "ClapTrap.hpp"
 
 int	main(void)
 {
-	PhoneBook	phonebook;
-	std::string	str;
-	int			contact_number;
+	ClapTrap	instance1("Frodon");
+	ClapTrap	instance2("Sam");
 
-	contact_number = 0;
-	while (1)
-	{
-		std::cin >> str;
-		if (str.compare("ADD") == 0)
-		{
-			phonebook.appendContact(contact_number);
-			contact_number++;
-			if (contact_number == 8)
-				contact_number = 0;
-		}
-		if (str.compare("SEARCH") == 0)
-			phonebook.printPhoneBook();
-		if (str.compare("EXIT") == 0)
-			break;
-	}
+	instance1.attack("Sam");
+	instance2.takeDamage(0);
+	instance2.attack("Frodon");
+	instance1.takeDamage(0);
+	instance1.beRepaired(10);
+	instance2.beRepaired(10);
+
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+	instance1.attack("Sam");
+
+	instance1.attack("Sam");
+
 	return (0);
 }

@@ -5,37 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 16:11:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:25:11 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/17 12:56:25 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 13:34:00 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	PhoneBook	phonebook;
-	std::string	str;
-	int			contact_number;
+	ScavTrap	instance1("Frodon");
+	ScavTrap	instance2("Sam");
 
-	contact_number = 0;
-	while (1)
-	{
-		std::cin >> str;
-		if (str.compare("ADD") == 0)
-		{
-			phonebook.appendContact(contact_number);
-			contact_number++;
-			if (contact_number == 8)
-				contact_number = 0;
-		}
-		if (str.compare("SEARCH") == 0)
-			phonebook.printPhoneBook();
-		if (str.compare("EXIT") == 0)
-			break;
-	}
+	instance1.attack("Sam");
+	instance2.takeDamage(20);
+	instance2.attack("Frodon");
+	instance1.takeDamage(20);
+
+	instance1.beRepaired(20);
+	instance2.beRepaired(20);
+
+	instance1.guardGate();
+	instance2.guardGate();
+
 	return (0);
 }

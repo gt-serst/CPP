@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:20:39 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/17 13:54:19 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 13:58:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <limits>
-#include <ios>
-#include "Contact.hpp"
+#include "ClapTrap.hpp"
 
-class PhoneBook{
+class FragTrap : public ClapTrap{
 
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	appendContact(int i);
-		void	printPhoneBook(void) const;
-		void	printLine(std::string str) const;
-		void	printPhoneBookLine(void) const;
-	private:
-		Contact	_contact[8];
+		FragTrap(void);
+		FragTrap(std::string name);
+		FragTrap(FragTrap & src);
+		~FragTrap(void);
+		void	attack(const std::string& target);
+		void	highFivesGuys(void);
 };
 
 #endif
