@@ -3,29 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:19:33 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/16 11:46:36 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:57:07 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
-Fixed::Fixed(void) : _n(0){
+Fixed::Fixed(void) : _fixed_point_value(0){
 
 	std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
-Fixed::Fixed(int const i) : _n(i << _bits_n){
+Fixed::Fixed(int const n) : _fixed_point_value(n << _fractional_bits){
 
 	std::cout << "Int constructor called" << std::endl;
 	return;
 }
 
-Fixed::Fixed(float const f) : _n(static_cast<int>(roundf(f * (1 << _bits_n)))){
+Fixed::Fixed(float const n) : _fixed_point_value(std::roundf(n * (1 << _fractional_bits))){
 
 	std::cout << "Float constructor called" << std::endl;
 	return;
@@ -47,28 +48,28 @@ Fixed::~Fixed(void){
 Fixed &	Fixed::operator=(Fixed const & rhs){
 
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_n = rhs.getRawBits();
+	this->_fixed_point_value = rhs.getRawBits();
 	return *this;
 }
 
 int	Fixed::getRawBits(void) const{
 
-	return this->_n;
+	return this->_fixed_point_value;
 }
 
 void	Fixed::setRawBits(int const raw){
 
-	this->_n = raw;
+	this->_fixed_point_value = raw;
 }
 
 float Fixed::toFloat(void) const {
-    
-	return static_cast<float>(_n) / (1 << _bits_n);
+
+	return static_cast<float>(_fixed_point_value) / (1 << _fractional_bits);
 }
 
 int Fixed::toInt(void) const {
-    
-	return _n >> _bits_n;
+
+	return _fixed_point_value >> _fractional_bits;
 }
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & rhs){

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:27:36 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/16 15:28:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:44:09 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Point.hpp"
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point){
 }

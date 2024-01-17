@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 10:13:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:57:07 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/16 10:33:53 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/17 10:41:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include <iostream>
+#include "Fixed.hpp"
 
-class Fixed{
-
-	public:
-		Fixed(void);
-		Fixed(Fixed const & src);
-		~Fixed(void);
-		Fixed &	operator=(Fixed const & rhs);
-		int	getRawBits(void) const;
-		void	setRawBits(int const raw);
-	private:
-		int	_fixed_point_value;
-		static int const _fractional_bits = 8;
-
-};
-
-#endif
+int	main(void)
+{
+	return 0;
+}

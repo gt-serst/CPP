@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:42:34 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 16:12:25 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:54:38 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,15 @@
 #include "Contact.hpp"
 
 class PhoneBook{
-
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	appendContact(Contact contact, int i);
-		void	printPhoneBook(void) const;
-		void	printLine(std::string str) const;
-		void	printPhoneBookLine(void) const;
-	private:
-		Contact	_contact[8];
+public:
+	PhoneBook(void);
+	~PhoneBook(void);
+	void	appendContact(Contact contact, int i);
+	void	printPhoneBook(void) const;
+	void	printLine(std::string str) const;
+	void	printPhoneBookLine(void) const;
+private:
+	Contact	_contact[8];
 };
 
 #endif

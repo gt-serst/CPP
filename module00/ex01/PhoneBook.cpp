@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:44:02 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 16:18:41 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:59:02 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,44 +25,44 @@ PhoneBook::~PhoneBook(void){
 }
 
 void	PhoneBook::appendContact(Contact contact, int contact_number){
-	
+
 	std::string	buff;
 
 	this->_contact[contact_number] = contact;
 	std::cout << "Insert your first name: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())
-            std::cin.clear();
+			std::cin.clear();
 	} while (buff.empty());
 	this->_contact[contact_number].setFirstName(buff);
-	std::cout << "Insert your last name: ";	
+	std::cout << "Insert your last name: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())
-            std::cin.clear();
+			std::cin.clear();
 	} while (buff.empty());
 	this->_contact[contact_number].setLastName(buff);
-	std::cout << "Insert your nick name: ";	
+	std::cout << "Insert your nick name: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())
-            std::cin.clear();
+			std::cin.clear();
 	} while (buff.empty());
 	this->_contact[contact_number].setNickName(buff);
 	std::cout << "Insert your phone number: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())
-            std::cin.clear();
+			std::cin.clear();
 	} while (buff.empty());
 	this->_contact[contact_number].setPhoneNumber(buff);
 	std::cout << "Insert your darkest secret: ";
 	do {
 		if (!std::getline(std::cin, buff) || buff.empty())
-            std::cin.clear();
+			std::cin.clear();
 	} while (buff.empty());
 	this->_contact[contact_number].setDarkestSecret(buff);
 }
 
 void	PhoneBook::printPhoneBook(void) const{
-	
+
 	int	i;
 	std::string str;
 
@@ -88,7 +88,7 @@ void	PhoneBook::printPhoneBook(void) const{
 }
 
 void	PhoneBook::printLine(std::string str) const{
-	
+
 	int	len;
 	int	space;
 
@@ -108,16 +108,16 @@ void	PhoneBook::printLine(std::string str) const{
 }
 
 void	PhoneBook::printPhoneBookLine(void) const{
-	
+
 	int		i;
 
 	std::cout << "Insert the index of the user you want to see more information: ";
 	while (!(std::cin >> i))
-    {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid input. Please enter a number: ";
-    }
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid input. Please enter a number: ";
+	}
 	if (i < 0 || i > 7)
 	{
 		std::cout << "Invalid input. You inserted a number outside of the array" << std::endl;
