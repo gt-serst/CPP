@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:37:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 14:50:52 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:32:25 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int	main(int argc, char **argv)
 		while (argv[i])
 		{
 			j = 0;
-			while (argv[i][j])
+			std::string test(argv[i]);
+			while (test[j])
 			{
-				argv[i][j] = toupper(argv[i][j]);
+				test[j] = std::toupper(test[j]);
 				j++;
 			}
-			std::cout << argv[i];
+			std::cout << test;
 			i++;
 		}
 		std::cout << std::endl;
