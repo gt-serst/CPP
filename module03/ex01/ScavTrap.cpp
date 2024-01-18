@@ -31,6 +31,11 @@ ScavTrap::ScavTrap(ScavTrap & src){
 	return;
 }
 
+ScavTrap &	ScavTrap::operator=(ScavTrap & const rhs){
+
+	return *this;
+}
+
 ScavTrap::~ScavTrap(void){
 
 	std::cout << "Destructor of ScavTrap called" << std::endl;
