@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:56:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:16:12 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:26:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	FragTrap::attack(const std::string& target){
 	}
 	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
 	_energy_points -= 1;
+	std::cout << "FragTrap " << _name << " has " << _energy_points << " energy points left." << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void){

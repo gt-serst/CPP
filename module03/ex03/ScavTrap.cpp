@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:19:52 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:16:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:35:09 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ScavTrap::attack(const std::string& target){
 	}
 	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
 	_energy_points -= 1;
+	std::cout << "ScavTrap " << _name << " has " << _energy_points << " energy points left." << std::endl;
 }
 
 void	ScavTrap::guardGate(){

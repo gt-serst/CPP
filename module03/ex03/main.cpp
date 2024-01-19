@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 12:56:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:15:09 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:35:39 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 	DiamondTrap	instance5("Merry");
 	DiamondTrap	instance6("Pipin");
 
+	std::cout << "############### ClapTrap ###############" << std::endl;
 	instance1.attack("Sam");
 	instance2.takeDamage(20);
 	instance2.attack("Frodon");
@@ -33,9 +34,11 @@ int	main(void)
 	instance1.beRepaired(20);
 	instance2.beRepaired(20);
 
+	std::cout << "############### ScavTrap ###############" << std::endl;
 	instance1.guardGate();
 	instance2.guardGate();
 
+	std::cout << "############### FragTrap ###############" << std::endl;
 	instance3.attack("Gandalf");
 	instance4.takeDamage(30);
 	instance4.attack("Bilbon");
@@ -47,6 +50,7 @@ int	main(void)
 	instance3.highFivesGuys();
 	instance4.highFivesGuys();
 
+	std::cout << "############### DiamondTrap ###############" << std::endl;
 	instance5.attack("Pipin");
 	instance6.takeDamage(30);
 
