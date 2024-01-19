@@ -15,7 +15,7 @@ SRCS	= main.cpp\
 		  replace_occ.cpp\
 		  write_of.cpp
 
-NAME	= replace
+NAME	= Sed
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

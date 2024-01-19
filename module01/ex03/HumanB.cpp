@@ -12,15 +12,15 @@
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string humanName) : _name(humanName){
+HumanB::HumanB(std::string name) : _name(name){
 
-	std::cout << "Constructor called for HumanB" << std::endl;
+	std::cout << "Constructor of Human B called" << std::endl;
 	return;
 }
 
 HumanB::~HumanB(void){
 
-	std::cout << "Destructor called for HumanB" << std::endl;
+	std::cout << "Destructor of HumanB called" << std::endl;
 	return;
 }
 

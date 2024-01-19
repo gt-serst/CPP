@@ -15,29 +15,25 @@
 
 bool	write_of(std::string filename, std::string buf);
 
-bool replace_occ(char **argv, char *buffer)
+bool replace_occ(std::string buf, std::string filename, std::string str_to_find, std::string replacement_str)
 {
 	std::size_t pos;
 	std::size_t last_pos;
-	std::string content;
+	std::string sed_str;
 	
-	std::string buf = buffer;
-	std::string filename = argv[1];
-	std::string s1 = argv[2];
-	std::string s2 = argv[3];
-	pos = buf.find(s1, 0);
+	pos = buf.find(str_to_find, 0);
 	last_pos = 0;
 	while (pos != std::string::npos)
 	{
-		if (s1.compare("") == 0)
+		if (str_to_find.compare("") == 0)
 			break;
-		content.append(buf.substr(last_pos, pos - last_pos));
-		content.append(s2);
-		last_pos = pos + s1.length();
-		pos = buf.find(s1, last_pos);
+		sed_str.append(buf.substr(last_pos, pos - last_pos));
+		sed_str.append(replacement_str);
+		last_pos = pos + str_to_find.length();
+		pos = buf.find(str_to_find, last_pos);
 	}
-	content.append(buf.substr(last_pos));
-	if (!write_of(filename, content))
+	sed_str.append(buf.substr(last_pos));
+	if (!write_of(filename, sed_str))
 		return (false);
 	return (true);
 }

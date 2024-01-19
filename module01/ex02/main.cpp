@@ -13,7 +13,7 @@
 #include <string>
 #include <iostream>
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	std::string string = "HI THIS IS BRAIN";
 	std::string* stringPTR = &string;
@@ -25,7 +25,6 @@ int	main(int argc, char **argv)
 	std::cout << string << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
-	(void)argc;
-	(void)argv;
+
 	return (0);
 }

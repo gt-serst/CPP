@@ -20,8 +20,8 @@ Zombie*	zombieHorde(int N, std::string name)
 	i = 0;
 	while (i < N)
 	{
-		zombieHordePtr[i] = Zombie(name);
-		zombieHordePtr[i++].announce();
+		zombieHordePtr[i].setName(name);
+		i++;
 	}
 	return (zombieHordePtr);
 }

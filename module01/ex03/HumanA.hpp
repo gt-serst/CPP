@@ -20,7 +20,7 @@
 class	HumanA{
 
 	public:
-		HumanA(std::string humanName, Weapon& weaponREF);
+		HumanA(std::string name, Weapon& weaponREF);
 		~HumanA(void);
 		void	attack(void);
 	private:

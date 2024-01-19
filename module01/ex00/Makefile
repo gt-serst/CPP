@@ -15,7 +15,7 @@ SRCS	= main.cpp\
 		  newZombie.cpp\
 		  randomChump.cpp
 
-NAME	= zombie
+NAME	= Zombie
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

@@ -14,13 +14,13 @@
 
 Weapon::Weapon(std::string weaponType) : _type(weaponType){
 
-	std::cout << "Constructor called for Weapon" << std::endl;
+	std::cout << "Constructor of Weapon called" << std::endl;
 	return;
 }
 
 Weapon::~Weapon(void){
 
-	std::cout << "Destructor called for Weapon" << std::endl;
+	std::cout << "Destructor of Weapon called" << std::endl;
 	return;
 }
 

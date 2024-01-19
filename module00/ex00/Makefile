@@ -12,7 +12,7 @@
 
 SRCS	= megaphone.cpp
 
-NAME	= megaphone
+NAME	= Megaphone
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

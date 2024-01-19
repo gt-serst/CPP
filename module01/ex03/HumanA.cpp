@@ -12,15 +12,15 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string humanName, Weapon& weaponREF) : _name(humanName), _weapon(weaponREF){
+HumanA::HumanA(std::string name, Weapon& weaponREF) : _name(name), _weapon(weaponREF){
 
-	std::cout << "Constructor called for HumanA" << std::endl;
+	std::cout << "Constructor of HumanA called" << std::endl;
 	return;
 }
 
 HumanA::~HumanA(void){
 
-	std::cout << "Destructor called for HumanA" << std::endl;
+	std::cout << "Destructor of HumanA called" << std::endl;
 	return;
 }
 

@@ -14,7 +14,7 @@ SRCS	= main.cpp\
 		  PhoneBook.cpp\
 		  Contact.cpp
 
-NAME	= phonebook
+NAME	= PhoneBook
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

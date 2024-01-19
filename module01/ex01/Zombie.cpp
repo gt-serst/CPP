@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <string>
 
 Zombie::Zombie(void){
 
@@ -26,8 +27,13 @@ Zombie::Zombie(std::string const zombie_name) : _name(zombie_name){
 
 Zombie::~Zombie(void){
 
-	std::cout << "Destructor called (" << _name << ")" << std::endl;
+	std::cout << "Destructor of " << _name << " called" << std::endl;
 	return;
+}
+
+void	Zombie::setName(std::string name){
+
+	this->_name = name;
 }
 
 void	Zombie::announce(void) const{

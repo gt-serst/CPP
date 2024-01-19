@@ -14,12 +14,12 @@
 #include <iostream>
 #include <fstream>
 
-bool	write_of(std::string filename, std::string buf2)
+bool	write_of(std::string filename, std::string sed_str)
 {
 	std::ofstream ofs(filename.append(".replace"));
 	if (ofs.is_open())
 	{
-		ofs << buf2;
+		ofs << sed_str;
 		ofs.close();
 	}
 	else

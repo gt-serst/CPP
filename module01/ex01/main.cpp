@@ -12,11 +12,15 @@
 
 #include "Zombie.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	Zombie*	zombieHordePtr = zombieHorde(5, "Bilbon");
+	int	i;
+	int	num_zombies = 5;
+	Zombie*	zombieHordePtr = zombieHorde(num_zombies, "Bilbon");
+	
+	i = 0;
+	while (i < num_zombies)
+		zombieHordePtr[i++].announce();
 	delete [] zombieHordePtr;
-	(void)argc;
-	(void)argv;
 	return (0);
 }

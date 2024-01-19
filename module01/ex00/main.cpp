@@ -12,12 +12,10 @@
 
 #include "Zombie.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	Zombie*	zombiePtr = newZombie("Frodon");
 	randomChump("Sam");
 	delete zombiePtr;
-	(void)argc;
-	(void)argv;
 	return (0);
 }

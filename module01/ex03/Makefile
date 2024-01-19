@@ -15,7 +15,7 @@ SRCS	= main.cpp\
 		  HumanA.cpp\
 		  HumanB.cpp
 
-NAME	= weapon
+NAME	= Weapon
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

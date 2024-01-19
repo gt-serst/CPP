@@ -24,5 +24,3 @@ class Harl{
 		void	warning(void);
 		void	error(void);
 };
-
-typedef	void (Harl::*t_func)(void);

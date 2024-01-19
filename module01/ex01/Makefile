@@ -14,7 +14,7 @@ SRCS	= main.cpp\
 		  Zombie.cpp\
 		  zombieHorde.cpp
 
-NAME	= zombie
+NAME	= ZombieHorde
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

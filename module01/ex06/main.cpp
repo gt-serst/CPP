@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Harl.hpp"
 
 int	main(int argc, char **argv)
@@ -19,7 +18,5 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 		harl.complain(argv[1]);	
-	(void)argc;
-	(void)argv;
 	return (0);
 }

@@ -22,6 +22,7 @@ class Zombie{
 		Zombie();
 		Zombie(std::string const zombie_name);
 		~Zombie(void);
+		void	setName(std::string name);
 		void	announce(void) const;
 	private:
 		std::string	_name;
