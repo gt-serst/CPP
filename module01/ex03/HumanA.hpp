@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:47:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/12 11:15:09 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:17:43 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	HumanA{
 		~HumanA(void);
 		void	attack(void);
 	private:
-		std::string _name;
+		std::string	_name;
 		Weapon& 	_weapon;
 };
 

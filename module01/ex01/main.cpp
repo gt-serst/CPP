@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/11 15:04:10 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:25:55 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main(void)
 {
-	int	i;
-	int	num_zombies = 5;
+	int		i;
+	int		num_zombies = 10;
 	Zombie*	zombieHordePtr = zombieHorde(num_zombies, "Bilbon");
-	
+
 	i = 0;
 	while (i < num_zombies)
 		zombieHordePtr[i++].announce();

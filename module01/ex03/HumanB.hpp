@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:56:59 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/12 11:36:22 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:17:52 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	HumanB{
 		void	attack(void);
 	private:
 		std::string	_name;
-		Weapon* 	_weapon;
+		Weapon*	_weapon;
 };
 
 #endif

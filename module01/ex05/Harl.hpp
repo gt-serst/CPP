@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:30:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 12:43:42 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:22:13 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ class Harl{
 		void	error(void);
 };
 
-typedef void (Harl::*t_func) (void);
+typedef void	(Harl::*t_func) (void);
 
 #endif

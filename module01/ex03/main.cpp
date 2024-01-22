@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 18:02:48 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/12 11:36:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 10:18:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	{
 		Weapon club = Weapon("crude spiked club");
@@ -31,7 +31,5 @@ int	main(int argc, char **argv)
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	(void)argc;
-	(void)argv;
 	return (0);
 }
