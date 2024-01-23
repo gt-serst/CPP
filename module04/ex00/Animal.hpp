@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/22 10:34:18 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/22 15:17:16 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 11:00:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-int	main(void)
-{
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
-	return (0);
-}
+#include <string>
+
+class Animal{
+
+	public:
+		Animal(void);
+		Animal(std::string animal_type);
+		Animal(Animal & src);
+		Animal &	operator=(Animal const & rhs);
+		virtual ~Animal(void);
+		std::string	const &	getType(void) const;
+		virtual void	makeSound(void) const;
+	protected:
+		std::string	type;
+};
+
+#endif

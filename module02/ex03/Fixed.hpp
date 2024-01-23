@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:13:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:57:07 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:48:47 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,28 +23,33 @@ public:
 	Fixed(Fixed const & src);
 	~Fixed(void);
 	Fixed &	operator=(Fixed const & rhs);
+	int	getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+	float	toFloat(void) const;
+	int	toInt(void) const;
+
 	bool	operator>(Fixed const & rhs) const;
 	bool	operator<(Fixed const & rhs) const;
 	bool	operator>=(Fixed const & rhs) const;
 	bool	operator<=(Fixed const & rhs) const;
 	bool	operator==(Fixed const & rhs) const;
 	bool	operator!=(Fixed const & rhs) const;
+
 	Fixed	operator+(Fixed const & rhs);
 	Fixed	operator-(Fixed const & rhs);
 	Fixed	operator*(Fixed const & rhs);
 	Fixed	operator/(Fixed const & rhs);
+
 	Fixed &	operator++(void);
 	Fixed &	operator--(void);
 	Fixed	operator++(int);
 	Fixed	operator--(int);
+
 	static Fixed &	min(Fixed & a, Fixed & b);
 	static const Fixed &	min(Fixed const & a, Fixed const & b);
 	static Fixed &	max(Fixed & a, Fixed & b);
 	static const Fixed &	max(Fixed const & a, Fixed const & b);
-	int	getRawBits(void) const;
-	void	setRawBits(int const raw);
-	float	toFloat(void) const;
-	int	toInt(void) const;
 private:
 	int	_fixed_point_value;
 	static int const	_fractional_bits = 8;

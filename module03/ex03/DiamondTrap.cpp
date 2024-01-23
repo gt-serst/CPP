@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 14:24:19 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 14:24:20 by gt-serst         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
 #include <iostream>
 #include <string>
@@ -7,8 +19,12 @@ DiamondTrap::DiamondTrap(void){
 	std::cout << "Default constructor of DiamondTrap called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(ClapTrap::_name + "_clap_name", FragTrap::_hit_points, ScavTrap::_energy_points, FragTrap::_attack_damage), ScavTrap(name), FragTrap(name){
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), _name(name){
 
+	this->_name = name;
+	this->_hit_points = FragTrap::_hit_points;
+	this->_energy_points = ScavTrap::_energy_points;
+	this->_attack_damage = FragTrap::_attack_damage;
 	std::cout << "Constructor of DiamondTrap called" << std::endl;
 	return;
 }

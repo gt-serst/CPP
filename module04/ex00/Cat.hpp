@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/22 10:34:18 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/22 15:46:24 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 11:00:13 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-int	main(void)
-{
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
-	return (0);
-}
+#include "Animal.hpp"
+
+class Cat : public Animal{
+
+	public:
+		Cat(void);
+		Cat(std::string type);
+		Cat(Cat & src);
+		Cat &	operator=(Cat const & rhs);
+		~Cat(void);
+		virtual void	makeSound() const;
+};
+
+#endif

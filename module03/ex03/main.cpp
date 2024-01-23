@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 12:56:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/19 16:35:39 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:33:52 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,41 +18,48 @@
 
 int	main(void)
 {
-	ScavTrap	instance1("Frodon");
-	ScavTrap	instance2("Sam");
-	FragTrap	instance3("Bilbon");
-	FragTrap	instance4("Gandalf");
-	DiamondTrap	instance5("Merry");
-	DiamondTrap	instance6("Pipin");
+	ScavTrap	frodon("Frodon");
+	ScavTrap	sam("Sam");
+	FragTrap	bilbon("Bilbon");
+	FragTrap	gandalf("Gandalf");
+	DiamondTrap	merry("Merry");
+	DiamondTrap	pipin("Pipin");
 
-	std::cout << "############### ClapTrap ###############" << std::endl;
-	instance1.attack("Sam");
-	instance2.takeDamage(20);
-	instance2.attack("Frodon");
-	instance1.takeDamage(20);
+	frodon.attack("Sam");
+	sam.takeDamage(20);
+	sam.attack("Frodon");
+	frodon.takeDamage(20);
 
-	instance1.beRepaired(20);
-	instance2.beRepaired(20);
+	frodon.beRepaired(20);
+	sam.beRepaired(20);
 
-	std::cout << "############### ScavTrap ###############" << std::endl;
-	instance1.guardGate();
-	instance2.guardGate();
+	frodon.guardGate();
+	sam.guardGate();
 
-	std::cout << "############### FragTrap ###############" << std::endl;
-	instance3.attack("Gandalf");
-	instance4.takeDamage(30);
-	instance4.attack("Bilbon");
-	instance3.takeDamage(30);
+	bilbon.attack("Gandalf");
+	gandalf.takeDamage(30);
+	gandalf.attack("Bilbon");
+	bilbon.takeDamage(30);
 
-	instance3.beRepaired(30);
-	instance4.beRepaired(30);
+	bilbon.beRepaired(30);
+	gandalf.beRepaired(30);
 
-	instance3.highFivesGuys();
-	instance4.highFivesGuys();
+	bilbon.highFivesGuys();
+	gandalf.highFivesGuys();
 
-	std::cout << "############### DiamondTrap ###############" << std::endl;
-	instance5.attack("Pipin");
-	instance6.takeDamage(30);
+	merry.attack("Pipin");
+	pipin.takeDamage(30);
+	pipin.attack("Merry");
+	merry.takeDamage(30);
+
+	merry.beRepaired(30);
+
+	merry.guardGate();
+
+	merry.highFivesGuys();
+
+	merry.whoAmI();
+	pipin.whoAmI();
 
 	return (0);
 }

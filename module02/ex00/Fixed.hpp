@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:13:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:57:07 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:15:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed{
 		void	setRawBits(int const raw);
 	private:
 		int	_fixed_point_value;
-		static int const _fractional_bits = 8;
+		static int const	_fractional_bits = 8;
 
 };
 

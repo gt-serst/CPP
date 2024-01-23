@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:13:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:57:07 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:20:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Fixed{
 		Fixed &	operator=(Fixed const & rhs);
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
+		
 		float	toFloat(void) const;
 		int	toInt(void) const;
 	private:

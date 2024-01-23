@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:19:28 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 10:43:40 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 09:58:24 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	Point(Point const & src);
 	Point &	operator=(Point const & rhs);
 	~Point(void);
+	Fixed	getX(void) const;
+	Fixed	getY(void) const;
 private:
 	Fixed const	_x;
 	Fixed const	_y;

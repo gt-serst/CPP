@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/23 14:24:24 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 14:24:25 by gt-serst         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 
@@ -6,7 +18,7 @@
 #include "FragTrap.hpp"
 #include <string>
 
-class DiamondTrap : public virtual ScavTrap, public virtual FragTrap{
+class DiamondTrap : public ScavTrap, public FragTrap{
 
 	public:
 		DiamondTrap(void);

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:19:52 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/19 16:35:09 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:11:36 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ ScavTrap::ScavTrap(void){
 	std::cout << "Default constructor of ScavTrap called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20){
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 20;
 	std::cout << "Constructor of ScavTrap called" << std::endl;
 }
 
@@ -29,6 +32,15 @@ ScavTrap::ScavTrap(ScavTrap & src){
 	std::cout << "Copy constructor of ScavTrap called" << std::endl;
 	*this = src;
 	return;
+}
+
+ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs){
+
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
+	return *this;
 }
 
 ScavTrap::~ScavTrap(void){

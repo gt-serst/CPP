@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/22 10:34:18 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/22 15:42:43 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 11:00:38 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-int	main(void)
-{
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
-	return (0);
-}
+#include <string>
+
+class WrongAnimal{
+
+	public:
+		WrongAnimal(void);
+		WrongAnimal(std::string animal_type);
+		WrongAnimal(WrongAnimal & src);
+		WrongAnimal &	operator=(WrongAnimal const & rhs);
+		virtual ~WrongAnimal(void);
+		std::string const &	getType(void) const;
+		void	makeSound(void) const;
+	protected:
+		std::string	type;
+};
+
+#endif

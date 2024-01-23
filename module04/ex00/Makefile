@@ -6,14 +6,18 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/01/23 14:17:19 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/01/22 15:54:40 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
-		  ClapTrap.cpp\
+		  Animal.cpp\
+		  Dog.cpp\
+		  Cat.cpp\
+		  WrongAnimal.cpp\
+		  WrongCat.cpp
 
-NAME	= ClapTrap
+NAME	= Animal
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

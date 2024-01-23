@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 12:28:24 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 13:10:43 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:49:14 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,22 @@ void	ClapTrap::attack(const std::string& target){
 
 	if (_hit_points <= 0 || _energy_points <= 0)
 	{
-		std::cout << "CapTrap " << _name << " cannot execute any action need to be alive or to have more energy points." << std::endl;
+		std::cout << "ClapTrap " << _name << " cannot execute any action need to be alive or to have more energy points." << std::endl;
 		return;
 	}
-	std::cout << "CapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
 	_energy_points -= 1;
+	std::cout << "ClapTrap " << _name << " has " << _energy_points << " energy points left." << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount){
 
+	if (_hit_points <= amount)
+	{
+		_hit_points = 0;
+		std::cout << "ClapTrap " << _name << " is dead!" << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage!" << std::endl;
 	_hit_points -= amount;
 	std::cout << "ClapTrap " << _name << " has now " << _hit_points << " hit points." << std::endl;
@@ -70,11 +77,12 @@ void	ClapTrap::beRepaired(unsigned int amount){
 
 	if (_hit_points <= 0 || _energy_points <= 0)
 	{
-		std::cout << "CapTrap " << _name << " cannot execute any action need to be alive or to have more energy points." << std::endl;
+		std::cout << "ClapTrap " << _name << " cannot execute any action need to be alive or to have more energy points." << std::endl;
 		return;
 	}
 	std::cout << "ClapTrap " << _name << " heals " << amount << " hit points!" << std::endl;
 	_hit_points += amount;
-	_energy_points -= 1;
 	std::cout << "ClapTrap " << _name << " has now " << _hit_points << " hit points." << std::endl;
+	_energy_points -= 1;
+	std::cout << "ClapTrap " << _name << " has " << _energy_points << " energy points left." << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:12:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/19 16:35:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/22 13:09:21 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ScavTrap : virtual public ClapTrap{
 		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(ScavTrap & src);
+		ScavTrap &	operator=(ScavTrap const & rhs);
 		~ScavTrap(void);
 		void	attack(const std::string& target);
 		void	guardGate();

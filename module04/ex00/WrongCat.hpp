@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 13:50:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/22 10:34:18 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/01/22 15:48:25 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/01/23 11:00:07 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-int	main(void)
-{
-	Zombie*	zombiePtr = newZombie("Frodon");
-	randomChump("Sam");
-	delete zombiePtr;
-	return (0);
-}
+#include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal{
+
+	public:
+		WrongCat(void);
+		WrongCat(std::string type);
+		WrongCat(WrongCat & src);
+		WrongCat &	operator=(WrongCat const & rhs);
+		~WrongCat(void);
+		void	makeSound(void) const;
+};
+
+#endif

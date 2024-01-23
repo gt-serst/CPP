@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:56:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/19 16:26:35 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:57:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ FragTrap::FragTrap(void){
 	std::cout << "Default constructor of FragTrap called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30){
+FragTrap::FragTrap(std::string name) : ClapTrap(name){
 
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
 	std::cout << "Constructor of FragTrap called" << std::endl;
 }
 
@@ -31,22 +34,19 @@ FragTrap::FragTrap(FragTrap & src){
 	return;
 }
 
+FragTrap &	FragTrap::operator=(FragTrap const & rhs){
+
+	this->_name = rhs._name;
+	this->_hit_points = rhs._hit_points;
+	this->_energy_points = rhs._energy_points;
+	this->_attack_damage = rhs._attack_damage;
+	return *this;
+}
+
 FragTrap::~FragTrap(void){
 
 	std::cout << "Destructor of FragTrap called" << std::endl;
 	return;
-}
-
-void	FragTrap::attack(const std::string& target){
-
-	if (_hit_points <= 0 || _energy_points <= 0)
-	{
-		std::cout << "FragTrap " << _name << " cannot execute any action need to be alive or to have more energy points." << std::endl;
-		return;
-	}
-	std::cout << "FragTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage!" << std::endl;
-	_energy_points -= 1;
-	std::cout << "FragTrap " << _name << " has " << _energy_points << " energy points left." << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void){

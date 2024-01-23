@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:54:19 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 13:58:49 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:57:22 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ class FragTrap : public ClapTrap{
 		FragTrap(void);
 		FragTrap(std::string name);
 		FragTrap(FragTrap & src);
-		FragTrap &	operator=(FragTrap & const rhs);
+		FragTrap &	operator=(FragTrap const & rhs);
 		~FragTrap(void);
-		void	attack(const std::string& target);
 		void	highFivesGuys(void);
 };
 
