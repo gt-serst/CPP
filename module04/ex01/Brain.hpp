@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:19:07 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 13:29:00 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/05 13:46:25 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/05 14:38:30 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <string>
 
-class Dog : public Animal{
+class Brain{
 
 	public:
-		Dog(void);
-		Dog(std::string type);
-		Dog(Dog & src);
-		Dog &	operator=(Dog const & rhs);
-		~Dog(void);
-		virtual void	makeSound(void) const;
+		Brain(void);
+		Brain(Brain & src);
+		Brain &	operator=(Brain const & rhs);
+		~Brain(void);
+	private:
+		std::string	_ideas[100];
+
 };
 
 #endif
