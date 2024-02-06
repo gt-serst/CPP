@@ -6,11 +6,11 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:48:57 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:24:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/06 15:24:00 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -19,29 +19,31 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* k = new WrongCat();
-	const Animal* l = new Animal("Animal");
-	const Animal* m = new Dog("Chien");
-	const Animal* n = new Cat("Chat");
-
-	std::cout << j->getType();
-	std::cout << i->getType();
-
-	std::cout << l->getType() << std::endl;
-	std::cout << m->getType() << std::endl;
-	std::cout << n->getType() << std::endl;
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
+	//const AAnimal* k = new AAnimal();
 	
-	i->makeSound();
-	j->makeSound();
+	/*int		i;
+	int		num_animals = 100;
+	int		num_dogs = num_animals / 2;
+	AAnimal*	animals_array[num_animals];
 
-	meta->makeSound();
+	i = -1;
+	std::cout << ">>>>> Dynamically allocate Dog objects <<<<<" << std::endl;
+	while(i++ < num_dogs - 1)
+		animals_array[i] = new Dog();
+	std::cout << ">>>>> Dynamically allocate Cat objects <<<<<" << std::endl;
+	while(i < num_animals)
+	{
+		animals_array[i] = new Cat();
+		i++;
+	}
+	i = -1;
+	while (i++ < num_animals - 1)
+		delete animals_array[i];*/
 
-	k->makeSound();
+	delete j;
+	delete i;
 
-	delete n, delete m, delete l, delete k, delete i, delete j, delete meta;
-	
 	return 0;
 }

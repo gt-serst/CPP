@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/22 15:17:16 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:24:48 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/06 11:37:07 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/06 11:38:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <string>
 
-class Animal{
+class AAnimal{
 
 	public:
-		Animal(void);
-		Animal(std::string animal_type);
-		Animal(Animal & src);
-		Animal &	operator=(Animal const & rhs);
-		virtual ~Animal(void);
+		AAnimal(void);
+		AAnimal(std::string animal_type);
+		AAnimal(AAnimal & src);
+		AAnimal &	operator=(AAnimal const & rhs);
+		virtual ~AAnimal(void);
 		std::string	const &	getType(void) const;
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 	protected:
 		std::string	type;
 };
