@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:07:29 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:40:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:03:07 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define AMATERIA_HPP
 
 #include <string>
+#include "ICharacter.hpp"
+//class ICharacter;
 
 class AMateria{
 

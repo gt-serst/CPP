@@ -6,14 +6,15 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/02/06 15:47:34 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/02/07 15:17:54 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
 		  AMateria.cpp\
 		  Ice.cpp\
-		  Cure.cpp
+		  Cure.cpp\
+		  Character.cpp
 
 NAME	= Interface
 

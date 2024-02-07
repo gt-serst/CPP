@@ -6,28 +6,29 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:48:58 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 18:01:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:03:32 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
 #include <string>
-#include <AMateria.hpp>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Character{
+class Character : public ICharacter{
 
 	public:
 		Character(void);
 		Character(std::string character_name);
 		Character(Character & src);
 		Character &	operator=(Character const & rhs);
-		virtual ~Character() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		virtual ~Character();
+		virtual std::string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
 	private:
 		std::string	_name;
 		AMateria*	_inventory[4];

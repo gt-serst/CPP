@@ -6,12 +6,15 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:37:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:42:12 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:52:51 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "Ice.hpp"
+#include "Cure.hpp"
+#include "ICharacter.hpp"
+#include "Character.hpp"
 
 int main()
 {

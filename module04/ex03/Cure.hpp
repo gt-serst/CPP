@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:37 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:45:50 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:05:15 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Cure : public AMateria{
 

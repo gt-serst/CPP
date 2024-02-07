@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:21:26 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:41:52 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:24:26 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class Ice : public AMateria{
 
