@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:37:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 15:52:51 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:09:53 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 #include "Cure.hpp"
 #include "ICharacter.hpp"
 #include "Character.hpp"
+#include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
-	AMateria*	tmp;
-	AMateria*	i = new Ice();
+	//AMateria*	tmp;
+	//AMateria*	i = new Ice();
 	//AMateria*	j = new Cure();
 
-	(void)tmp;	
-	/*IMateriaSource* src = new MateriaSource();
+	//(void)tmp;	
+	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
@@ -37,9 +39,9 @@ int main()
 	me->use(1, *bob);
 	delete bob;
 	delete me;
-	delete src;*/
+	delete src;
 	
-	delete i;
+	//delete i;
 	//delete j;
 	return 0;
 }

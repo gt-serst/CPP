@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 17:50:01 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 17:04:27 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/07 16:39:23 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/07 17:07:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "MateriaSource.hpp"
 #include <iostream>
 #include <string>
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-Character::Character(void){
+MateriaSource::MateriaSource(void){
 
 	_inventory[0] = NULL;
 	_inventory[1] = NULL;
 	_inventory[2] = NULL;
 	_inventory[3] = NULL;
-	std::cout << "Default constructor of Character called" << std::endl;
+	std::cout << "Default constructor of MateriaSource called" << std::endl;
 	return;
 }
 
-Character::Character(std::string character_name) : _name(character_name){
-
-	_inventory[0] = NULL;
-	_inventory[1] = NULL;
-	_inventory[2] = NULL;
-	_inventory[3] = NULL;
-	std::cout << "Constructor of Character called" << std::endl;
-	return;
-}
-
-Character::Character(Character & src){
+MateriaSource::MateriaSource(MateriaSource & src){
 
 	int	i;
 
-	std::cout << "Copy constructor of Character called" << std::endl;
+	std::cout << "Copy constructor of MateriaSource called" << std::endl;
 	i = 0;
 	while (i < 4)
 	{
@@ -54,11 +44,10 @@ Character::Character(Character & src){
 	return;
 }
 
-Character &	Character::operator=(Character const & rhs){
+MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs){
 
 	int	i;
-
-	this->_name = rhs._name;	
+	
 	delete _inventory[0];
 	delete _inventory[1];
 	delete _inventory[2];
@@ -75,29 +64,24 @@ Character &	Character::operator=(Character const & rhs){
 	return (*this);
 }
 
-Character::~Character(void){
+MateriaSource::~MateriaSource(void){
 
 	delete _inventory[0];
 	delete _inventory[1];
 	delete _inventory[2];
 	delete _inventory[3];
-	std::cout << "Destructor of Character called" << std::endl;
+	std::cout << "Destructor of MateriaSource called" << std::endl;
 	return;
 }
 
-std::string const &	Character::getName() const{
-
-	return this->_name;
-}
-
-void	Character::equip(AMateria* m){
+void	MateriaSource::learnMateria(AMateria* m){
 
 	int	i;
 
 	i = 0;
 	while (i < 4)
 	{
-		if (_inventory[i] == NULL)
+		if (_inventory[i] != NULL)
 		{
 			_inventory[i] = m;
 			break;
@@ -106,14 +90,20 @@ void	Character::equip(AMateria* m){
 	}
 }
 
-void	Character::unequip(int idx){
+AMateria* MateriaSource::createMateria(std::string const & type){
 
-	if (_inventory[idx] != NULL)
-		_inventory[idx] = NULL;
-}
+	int	i;
 
-void	Character::use(int idx, ICharacter& target){
-
-	if (_inventory[idx] != NULL)
-		_inventory[idx]->use(target);
+	i = 0;
+	while (i < 4 && _inventory[i] != NULL)
+		i++;
+	if (i == 0)
+		return NULL;
+	else
+	{
+		if (type == "ice")
+			return (new Ice());
+		else
+			return (new Cure());
+	}
 }

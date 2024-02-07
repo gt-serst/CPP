@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:12:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 15:36:19 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:04:28 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,10 @@ AMateria::~AMateria(void){
 std::string const &	AMateria::getType() const{
 
 	return this->type;
+}
+
+void AMateria::use(ICharacter &target) {
+
+	(void)target;
 }
 
