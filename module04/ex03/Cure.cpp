@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 14:39:44 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:38:10 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cure::Cure(void) : AMateria("cure"){
 	return;
 }
 
-Cure::Cure(Cure & src){
+Cure::Cure(Cure const & src) : AMateria("cure"){
 
 	std::cout << "Copy constructor of Cure called" << std::endl;
 	*this = src;
@@ -41,7 +41,7 @@ Cure::~Cure(void){
 
 AMateria*	Cure::clone() const{
 
-	return new Cure();
+	return new Cure(*this);
 }
 
 void	Cure::use(ICharacter& target){

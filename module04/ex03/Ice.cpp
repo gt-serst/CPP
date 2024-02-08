@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:27:44 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 14:39:38 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:38:29 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Ice::Ice(void) : AMateria("ice"){
 	return;
 }
 
-Ice::Ice(Ice & src){
+Ice::Ice(Ice const & src) : AMateria("ice"){
 
 	std::cout << "Copy constructor of Ice called" << std::endl;
 	*this = src;

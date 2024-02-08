@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:12:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 14:40:13 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:33:48 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ std::string const &	AMateria::getType() const{
 
 void AMateria::use(ICharacter &target) {
 
-	(void)target;
+	std::cout << "AMateria " << this->type << " used on " << target.getName() << std::endl;
 }
 

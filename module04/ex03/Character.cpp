@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:01 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 18:23:03 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:25:55 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 Character::Character(void){
 
-	_inventory[0] = NULL;
-	_inventory[1] = NULL;
-	_inventory[2] = NULL;
-	_inventory[3] = NULL;
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
 	std::cout << "Default constructor of Character called" << std::endl;
 	return;
 }
 
 Character::Character(std::string character_name) : _name(character_name){
 
-	_inventory[0] = NULL;
-	_inventory[1] = NULL;
-	_inventory[2] = NULL;
-	_inventory[3] = NULL;
+	this->_inventory[0] = NULL;
+	this->_inventory[1] = NULL;
+	this->_inventory[2] = NULL;
+	this->_inventory[3] = NULL;
 	std::cout << "Constructor of Character called" << std::endl;
 	return;
 }
@@ -42,9 +42,10 @@ Character::Character(Character & src){
 
 	std::cout << "Copy constructor of Character called" << std::endl;
 	i = 0;
-	while (i < 4 && src._inventory[i] != NULL)
+	while (i < 4)
 	{
-		_inventory[i] = src._inventory[i]->clone();
+		if (src._inventory[i] != NULL)
+			this->_inventory[i] = src._inventory[i]->clone();
 		i++;
 	}
 	*this = src;
@@ -57,15 +58,17 @@ Character &	Character::operator=(Character const & rhs){
 
 	this->_name = rhs._name;
 	i = 0;
-	while (i < 4 && _inventory[i] != NULL)
+	while (i < 4)
 	{
-		delete _inventory[i];
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 		i++;
 	}
 	i = 0;
-	while (i < 4 && rhs._inventory[i] != NULL)
+	while (i < 4)
 	{
-		_inventory[i] = rhs._inventory[i]->clone();
+		if (rhs._inventory[i] != NULL)
+			this->_inventory[i] = rhs._inventory[i]->clone();
 		i++;
 	}
 	return (*this);
@@ -76,9 +79,10 @@ Character::~Character(void){
 	int	i;
 
 	i = 0;
-	while (i < 4 && _inventory[i] != NULL)
+	while (i < 4)
 	{
-		delete _inventory[i];
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 		i++;
 	}
 	std::cout << "Destructor of Character called" << std::endl;
@@ -94,33 +98,32 @@ void	Character::equip(AMateria* m){
 
 	int	i;
 
+	if (!m)
+		return;
 	i = 0;
 	while (i < 4)
 	{
-		if (_inventory[i])
-		if (_inventory[i] == NULL)
+		if (this->_inventory[i] == NULL)
 		{
-			_inventory[i] = m;
+			this->_inventory[i] = m;
 			return;
 		}
 		i++;
 	}
 	ft_gc(m, false);
-	//keep the address of materia if the inventory is full to delete it at the end
 }
 
 void	Character::unequip(int idx){
 
-	if (idx < 4 && _inventory[idx] != NULL)
+	if (idx < 4 && this->_inventory[idx] != NULL)
 	{
-		ft_gc(_inventory[idx], false);
-		_inventory[idx] = NULL;
+		ft_gc(this->_inventory[idx], false);
+		this->_inventory[idx] = NULL;
 	}
-	//keep the address of materia drop on the floor to delete it at the end
 }
 
 void	Character::use(int idx, ICharacter& target){
 
-	if (idx < 4 && _inventory[idx] != NULL)
-		_inventory[idx]->use(target);
+	if (idx < 4 && this->_inventory[idx] != NULL)
+		this->_inventory[idx]->use(target);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:21:26 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 15:24:26 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:38:36 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Ice : public AMateria{
 
 	public:
 		Ice(void);
-		Ice(Ice & src);
+		Ice(Ice const & src);
 		Ice &	operator=(Ice const & rhs);
 		~Ice(void);
 		virtual AMateria* clone() const;

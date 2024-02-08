@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc.cpp                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:13:33 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 17:29:05 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 22:51:38 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static void	ft_lstclear(Node** gc)
 	while (current != NULL)
 	{
 		next = current->next;
-		delete current;
 		delete current->value;
+		delete current;
 		current = next;
 	}
 	*gc = NULL;
