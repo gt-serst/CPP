@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:42:35 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 12:26:06 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:36:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include "AMateria.hpp"
+
 //Forward declaration to avoid circular dependance
 class AMateria;
 

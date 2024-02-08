@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:37:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 12:29:19 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:26:16 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,19 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	std::cout << ">>>>> Deep copy operator <<<<<" << std::endl;
-	Character*	bil = new Character("bil");
-	Character*	john;
-	bil->equip(tmp);
-	john = bil;
-	bil->use(0, *bob);
-	john->use(0, *bob);
-	
+	std::cout << std::endl;
 	std::cout << ">>>>> Create an empty type of materia <<<<<" << std::endl;
 	tmp = src->createMateria("");
 	bob->equip(tmp);
 	bob->use(0, *me);
 
-	std::cout << ">>>>> Learn many materias <<<<<" << std::endl;
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	std::cout << std::endl;
+	std::cout << ">>>>> Equip many materias <<<<<" << std::endl;
+	me->equip(tmp);
+	me->equip(tmp);
+	me->equip(tmp);
 
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-
+	std::cout << std::endl;
 	std::cout << ">>>>> Unequip materias <<<<<" << std::endl;
 	me->unequip(0);
 	me->unequip(1);
@@ -64,6 +57,15 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	std::cout << std::endl;
+	std::cout << ">>>>> Learn many materias <<<<<" << std::endl;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
+	std::cout << std::endl;
 	std::cout << ">>>>> Create materia that is unknow <<<<<" << std::endl;
 	IMateriaSource* wrong_src = new MateriaSource();
 
@@ -74,10 +76,13 @@ int main()
 	me->use(0, *bob);
 	me->use(1, *bob);
 
+	std::cout << std::endl;
+	std::cout << ">>>>> Destruction <<<<<" << std::endl;
 	delete bob;
 	delete me;
 	delete src;
-	delete john;
+	delete wrong_src;
+	ft_gc(NULL, true);
 
 	//system("leaks Interface");
 	return 0;

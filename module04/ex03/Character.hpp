@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:48:58 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 12:24:41 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 15:57:16 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,13 @@ class Character : public ICharacter{
 		std::string	_name;
 		AMateria*	_inventory[4];
 };
+
+struct Node
+{
+	AMateria*	value;
+	struct Node	*next;
+};
+
+void	*ft_gc(AMateria* m, bool clean);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 12:29:58 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:39:44 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 Cure::Cure(void) : AMateria("cure"){
 
-	//std::cout << "Default constructor of Cure called" << std::endl;
+	std::cout << "Default constructor of Cure called" << std::endl;
 	return;
 }
 
 Cure::Cure(Cure & src){
 
-	//std::cout << "Copy constructor of Cure called" << std::endl;
+	std::cout << "Copy constructor of Cure called" << std::endl;
 	*this = src;
 	return;
 }
@@ -35,14 +35,13 @@ Cure &	Cure::operator=(Cure const & rhs){
 
 Cure::~Cure(void){
 
-	//std::cout << "Destructor of Cure called" << std::endl;
+	std::cout << "Destructor of Cure called" << std::endl;
 	return;
 }
 
 AMateria*	Cure::clone() const{
 
-	AMateria* cure = new Cure();
-	return cure;
+	return new Cure();
 }
 
 void	Cure::use(ICharacter& target){

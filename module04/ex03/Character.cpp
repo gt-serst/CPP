@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:01 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 12:29:21 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:23:03 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Character::Character(void){
 	_inventory[1] = NULL;
 	_inventory[2] = NULL;
 	_inventory[3] = NULL;
-	//std::cout << "Default constructor of Character called" << std::endl;
+	std::cout << "Default constructor of Character called" << std::endl;
 	return;
 }
 
@@ -32,7 +32,7 @@ Character::Character(std::string character_name) : _name(character_name){
 	_inventory[1] = NULL;
 	_inventory[2] = NULL;
 	_inventory[3] = NULL;
-	//std::cout << "Constructor of Character called" << std::endl;
+	std::cout << "Constructor of Character called" << std::endl;
 	return;
 }
 
@@ -40,7 +40,7 @@ Character::Character(Character & src){
 
 	int	i;
 
-	//std::cout << "Copy constructor of Character called" << std::endl;	
+	std::cout << "Copy constructor of Character called" << std::endl;
 	i = 0;
 	while (i < 4 && src._inventory[i] != NULL)
 	{
@@ -81,7 +81,7 @@ Character::~Character(void){
 		delete _inventory[i];
 		i++;
 	}
-	//std::cout << "Destructor of Character called" << std::endl;
+	std::cout << "Destructor of Character called" << std::endl;
 	return;
 }
 
@@ -97,19 +97,26 @@ void	Character::equip(AMateria* m){
 	i = 0;
 	while (i < 4)
 	{
+		if (_inventory[i])
 		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
-			break;
+			return;
 		}
 		i++;
 	}
+	ft_gc(m, false);
+	//keep the address of materia if the inventory is full to delete it at the end
 }
 
 void	Character::unequip(int idx){
 
 	if (idx < 4 && _inventory[idx] != NULL)
+	{
+		ft_gc(_inventory[idx], false);
 		_inventory[idx] = NULL;
+	}
+	//keep the address of materia drop on the floor to delete it at the end
 }
 
 void	Character::use(int idx, ICharacter& target){

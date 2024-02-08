@@ -6,7 +6,7 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/02/07 16:57:30 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/02/08 15:37:25 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ SRCS	= main.cpp\
 		  Ice.cpp\
 		  Cure.cpp\
 		  Character.cpp\
-		  MateriaSource.cpp
+		  MateriaSource.cpp\
+		  gc.cpp
 
 NAME	= Interface
 
