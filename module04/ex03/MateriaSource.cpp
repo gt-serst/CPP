@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:39:23 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 17:07:29 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:30:27 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(void){
 	_inventory[1] = NULL;
 	_inventory[2] = NULL;
 	_inventory[3] = NULL;
-	std::cout << "Default constructor of MateriaSource called" << std::endl;
+	//std::cout << "Default constructor of MateriaSource called" << std::endl;
 	return;
 }
 
@@ -30,7 +30,7 @@ MateriaSource::MateriaSource(MateriaSource & src){
 
 	int	i;
 
-	std::cout << "Copy constructor of MateriaSource called" << std::endl;
+	//std::cout << "Copy constructor of MateriaSource called" << std::endl;
 	i = 0;
 	while (i < 4)
 	{
@@ -47,7 +47,7 @@ MateriaSource::MateriaSource(MateriaSource & src){
 MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs){
 
 	int	i;
-	
+
 	delete _inventory[0];
 	delete _inventory[1];
 	delete _inventory[2];
@@ -70,7 +70,7 @@ MateriaSource::~MateriaSource(void){
 	delete _inventory[1];
 	delete _inventory[2];
 	delete _inventory[3];
-	std::cout << "Destructor of MateriaSource called" << std::endl;
+	//std::cout << "Destructor of MateriaSource called" << std::endl;
 	return;
 }
 
@@ -81,7 +81,7 @@ void	MateriaSource::learnMateria(AMateria* m){
 	i = 0;
 	while (i < 4)
 	{
-		if (_inventory[i] != NULL)
+		if (_inventory[i] == NULL)
 		{
 			_inventory[i] = m;
 			break;
@@ -95,15 +95,11 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 	int	i;
 
 	i = 0;
-	while (i < 4 && _inventory[i] != NULL)
-		i++;
-	if (i == 0)
-		return NULL;
-	else
+	while (i < 4 && _inventory[i])
 	{
-		if (type == "ice")
-			return (new Ice());
-		else
-			return (new Cure());
+		if (_inventory[i]->getType() == type)
+			return (_inventory[i]->clone());
+		i++;
 	}
+	return (0);
 }

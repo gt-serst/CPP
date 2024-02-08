@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:27:44 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 14:50:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/08 12:30:08 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 Ice::Ice(void) : AMateria("ice"){
 
-	std::cout << "Default constructor of Ice called" << std::endl;
+	//std::cout << "Default constructor of Ice called" << std::endl;
 	return;
 }
 
 Ice::Ice(Ice & src){
 
-	std::cout << "Copy constructor of Ice called" << std::endl;
+	//std::cout << "Copy constructor of Ice called" << std::endl;
 	*this = src;
 	return;
 }
@@ -35,7 +35,7 @@ Ice &	Ice::operator=(Ice const & rhs){
 
 Ice::~Ice(void){
 
-	std::cout << "Destructor of Ice called" << std::endl;
+	//std::cout << "Destructor of Ice called" << std::endl;
 	return;
 }
 
