@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:46:24 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 15:57:12 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:07:43 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public AAnimal{
 		~Cat(void);
 		virtual void	makeSound() const;
 	private:
-		Brain *	_brain;
+		Brain*	_brain;
 };
 
 #endif

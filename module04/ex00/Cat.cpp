@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 13:31:09 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:00:32 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ Cat::~Cat(void){
 
 void	Cat::makeSound(void) const{
 
-	std::cout << "MIAOW" << std::endl;
+	std::cout << "MIAOUW" << std::endl;
 }

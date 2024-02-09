@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 16:41:21 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:03:45 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Cat &	Cat::operator=(Cat const & rhs){
 
 	this->type = rhs.type;
 	delete this->_brain;
-    this->_brain = new Brain(*rhs._brain);
+	this->_brain = new Brain(*rhs._brain);
 	return *this;
 }
 
@@ -52,5 +52,5 @@ Cat::~Cat(void){
 
 void	Cat::makeSound(void) const{
 
-	std::cout << "MIAOW" << std::endl;
+	std::cout << "MIAOUW" << std::endl;
 }

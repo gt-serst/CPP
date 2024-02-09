@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:19:07 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 16:41:19 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:04:19 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Dog : public Animal{
 		~Dog(void);
 		virtual void	makeSound(void) const;
 	private:
-		Brain * _brain;
+		Brain*	_brain;
 };
 
 #endif

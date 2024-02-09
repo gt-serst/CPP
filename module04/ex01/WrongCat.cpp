@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 11:53:29 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:04:56 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ WrongCat::~WrongCat(void){
 
 void	WrongCat::makeSound(void) const{
 
-	std::cout << "MIAOW" << std::endl;
+	std::cout << "MIAOUW" << std::endl;
 }

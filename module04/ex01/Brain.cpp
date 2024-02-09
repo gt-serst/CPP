@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:49:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 16:41:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 09:01:50 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Brain &	Brain::operator=(Brain const & rhs){
 Brain::~Brain(void){
 
 	std::cout << "Destructor of Brain called" << std::endl;
-   return;	
+	return;
 }
 
 
