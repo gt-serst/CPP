@@ -3,25 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 09:04:56 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/09 11:16:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 #include <iostream>
 
-WrongCat::WrongCat(void){
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat"){
 
 	std::cout << "Default constructor of WrongCat called" << std::endl;
-	return;
-}
-
-WrongCat::WrongCat(std::string type) : WrongAnimal(type){
-
-	std::cout << "Constructor of WrongCat called" << std::endl;
 	return;
 }
 

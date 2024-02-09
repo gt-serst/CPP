@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:48:57 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 15:24:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:12:09 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,32 @@
 
 int main()
 {
+	std::cout << ">>>>> Construction <<<<<" << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* k = new WrongCat();
-	const Animal* l = new Animal("Animal");
-	const Animal* m = new Dog("Chien");
-	const Animal* n = new Cat("Chat");
+	const Animal* l = new Animal("Dog");
 
-	std::cout << j->getType();
-	std::cout << i->getType();
+	std::cout << std::endl;
+	std::cout << ">>>>> With virtual <<<<<" << std::endl;
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
 
 	std::cout << l->getType() << std::endl;
-	std::cout << m->getType() << std::endl;
-	std::cout << n->getType() << std::endl;
-	
+
 	i->makeSound();
 	j->makeSound();
 
 	meta->makeSound();
 
+	std::cout << std::endl;
+	std::cout << ">>>>> Without virtual <<<<<" << std::endl;
 	k->makeSound();
 
-	delete n, delete m, delete l, delete k, delete i, delete j, delete meta;
-	
+	std::cout << std::endl;
+	std::cout << ">>>>> Destruction <<<<<" << std::endl;
+	delete l, delete k, delete i, delete j, delete meta;
+
 	return 0;
 }

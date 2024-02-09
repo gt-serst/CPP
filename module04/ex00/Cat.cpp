@@ -3,25 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 09:00:32 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/09 11:06:25 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat(void){
+Cat::Cat(void) : Animal("Cat"){
 
 	std::cout << "Default constructor of Cat called" << std::endl;
-	return;
-}
-
-Cat::Cat(std::string type) : Animal(type){
-
-	std::cout << "Constructor of Cat called" << std::endl;
 	return;
 }
 

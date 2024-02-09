@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:37:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 23:16:01 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/09 11:01:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 int main()
 {
-	std::cout << ">>>>> Working properly <<<<<" << std::endl;
+	std::cout << ">>>>> Construction <<<<<" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -34,6 +34,9 @@ int main()
 	me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
+
+	std::cout << std::endl;
+	std::cout << ">>>>> Output <<<<<" << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
 
@@ -84,6 +87,5 @@ int main()
 	delete wrong_src;
 	ft_gc(NULL, true);
 
-	//system("leaks Interface");
 	return 0;
 }

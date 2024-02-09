@@ -6,24 +6,17 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:27:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 11:41:55 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:21:26 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog(void){
+Dog::Dog(void) : AAnimal("Dog"){
 
 	this->_brain = new Brain();
 	std::cout << "Default constructor of Dog is called" << std::endl;
-	return;
-}
-
-Dog::Dog(std::string type) : AAnimal(type){
-
-	this->_brain = new Brain();
-	std::cout << "Constructor of Dog is called" << std::endl;
 	return;
 }
 

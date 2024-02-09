@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:48:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 13:28:50 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/09 11:21:57 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class WrongCat : public WrongAnimal{
 
 	public:
 		WrongCat(void);
-		WrongCat(std::string type);
 		WrongCat(WrongCat & src);
 		WrongCat &	operator=(WrongCat const & rhs);
 		~WrongCat(void);
