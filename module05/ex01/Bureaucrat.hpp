@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:40:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 16:11:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:20:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat{
 
@@ -40,6 +43,8 @@ class Bureaucrat{
             		return "Grade is too low";
         		}
     	};
+
+		void	signForm(Form f);
 
 	private:
 		std::string const	_name;

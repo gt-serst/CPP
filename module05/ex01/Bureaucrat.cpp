@@ -6,13 +6,14 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 16:11:31 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:10:05 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name){
 
@@ -51,6 +52,14 @@ void	Bureaucrat::Downgrade(void){
 	if (this->_grade == 150)
 		throw GradeTooLowException();
 	this->_grade++;
+}
+
+void	Bureaucrat::signForm(Form f)
+{
+	if (f.getIsSigned() == true)
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	else
+		std::cout << this->_name << " couldn't sign " << f.getName() << " because ";
 }
 
 std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs){

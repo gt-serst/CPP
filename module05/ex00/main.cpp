@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 14:45:48 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/12 16:11:28 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,66 +14,73 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include <exception>
 
 int main() {
 
 	try
 	{
         Bureaucrat highGradeBureaucrat("HighGradeBureaucrat", 0);
-    }
-	catch (std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-    }
-    try 
-	{
-        Bureaucrat lowGradeBureaucrat("LowGradeBureaucrat", 160);
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << std::endl;
-    }	
-    try
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}	
+	try
+    {
+	 	Bureaucrat lowGradeBureaucrat("LowGradeBureaucrat", 160);
+	}
+	catch (Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
 	{
         Bureaucrat validGradeBureaucrat("ValidGradeBureaucrat", 75);
-        std::cout << "Successfully created bureaucrat with grade: " << validGradeBureaucrat.getGrade() << std::endl;
+		std::cout << validGradeBureaucrat << std::endl;
     }
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 	try
 	{
         Bureaucrat upgradeBureaucrat("UpgradeBureaucrat", 1);
-        try
-		{
-			upgradeBureaucrat.Upgrade();
-    	}
-		catch (std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+		std::cout << upgradeBureaucrat << std::endl;
+		upgradeBureaucrat.Upgrade();
 	}
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << std::endl;
-    }
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	try
 	{
         Bureaucrat downgradeBureaucrat("DowngradeBureaucrat", 150);
-        try
-		{
-			downgradeBureaucrat.Downgrade();
-    	}
-		catch (std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+    	std::cout << downgradeBureaucrat << std::endl;   
+		downgradeBureaucrat.Downgrade();
     }
-	catch (std::exception& e)
+	catch (Bureaucrat::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << std::endl;
-    }
-    return 0;
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return 0;
 }
