@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:18:24 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:41:24 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,33 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
-
 	try
 	{
-		Bureaucrat b("bob", 40);
-		Form	f("form", 70, 50);
-		b.signForm(f);
-		std::cout << f << std::endl;
+		Bureaucrat b("bob", 1);
+		AForm* f = new PresidentialPardonForm("home");
+		b.signForm(*f);
+		b.Downgrade();
+		b.executeForm(*f);
+		std::cout << b << std::endl;
+		std::cout << *f << std::endl;
+		delete f;
 	}
-	catch (Form::GradeTooHighException& e)
+	catch (AForm::GradeTooHighException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch (Form::GradeTooLowException& e)
+	catch (AForm::GradeTooLowException& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	try
-	{
-		Bureaucrat b("bob", 80);
-		Form	f("form", 70, 50);
-		b.signForm(f);
-		std::cout << f << std::endl;
-	}
-	catch (Form::GradeTooHighException& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (Form::GradeTooLowException& e)
+	catch (AForm::FormNotSignedYet& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

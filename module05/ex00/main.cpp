@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 16:11:28 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:30:06 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-int main() {
+int main(void) 
+{
 
 	try
 	{

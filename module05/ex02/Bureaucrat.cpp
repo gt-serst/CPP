@@ -6,14 +6,14 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 11:27:22 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 13:41:26 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <string>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name){
 
@@ -54,17 +54,29 @@ void	Bureaucrat::Downgrade(void){
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form& f)
-{
+void	Bureaucrat::signForm(AForm & f) const{
 	try
 	{
 		f.beSigned(*this);
 		std::cout << *this << " signed " << f.getName() << std::endl;
 	}
-	catch (Form::GradeTooLowException& e)
+	catch (AForm::GradeTooLowException& e)
 	{
 		std::cout << this->_name << " coulnd't sign " << f.getName() << " because " << e.what() << std::endl;
 	}	
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const{
+
+	try
+	{
+		form.execute(*this);
+		std::cout << *this << " executed " << form.getName() << std::endl;
+	}
+	catch (AForm::GradeTooLowException& e)
+	{
+		std::cout << "Couldn't execute the form because " << e.what() << std::endl;
+	}
 }
 
 std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs){

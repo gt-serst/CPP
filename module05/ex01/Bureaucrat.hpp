@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:40:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 17:20:49 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 11:30:21 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Bureaucrat{
         		}
     	};
 
-		void	signForm(Form f);
+		void	signForm(Form& f);
 
 	private:
 		std::string const	_name;

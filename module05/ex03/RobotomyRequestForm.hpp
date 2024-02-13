@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 16:12:55 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 11:30:22 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/13 11:51:43 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/13 13:16:27 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat;
 
-class Form{
+class RobotomyRequestForm : public AForm{
 
 	public:
-		Form(const std::string name, int const signing_grade, int const executing_grade);
-		~Form(void);
-		std::string	getName(void) const;
-		bool	getIsSigned(void) const;
-		int	getSigningGrade(void) const;
-		int	getExecutingGrade(void) const;
-		void	beSigned(Bureaucrat& b);
-		
+		RobotomyRequestForm(const std::string target);
+		~RobotomyRequestForm(void);	
+
 		class GradeTooHighException : public std::exception {
     		public:
         		virtual const char* what() const throw() {
@@ -41,13 +37,10 @@ class Form{
         		}
     	};
 
-	private:
-		const std::string _name;
-		bool	_is_signed;
-		int const	_signing_grade;
-		int const	_executing_grade;
-};
+		virtual void	action(void) const;
 
-std::ostream &	operator<<(std::ostream & o, Form const & rhs);
+	private:
+		const std::string _target;
+};
 
 #endif
