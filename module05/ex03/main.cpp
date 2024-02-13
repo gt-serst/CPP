@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:41:24 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:48:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
 	try
 	{
+		Intern	someRandomIntern;
+		AForm*	rrf;
 		Bureaucrat b("bob", 1);
-		AForm* f = new PresidentialPardonForm("home");
-		b.signForm(*f);
-		b.Downgrade();
-		b.executeForm(*f);
+		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "home");
+		b.signForm(*rrf);
+		b.executeForm(*rrf);
 		std::cout << b << std::endl;
-		std::cout << *f << std::endl;
-		delete f;
+		std::cout << *rrf << std::endl;
+		delete rrf;
 	}
 	catch (AForm::GradeTooHighException& e)
 	{
@@ -41,6 +43,10 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 	catch (AForm::FormNotSignedYet& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (AForm::FormNameUnknown& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

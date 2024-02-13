@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:38:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:29:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:48:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ class AForm{
     		public:
         		virtual const char* what() const throw() {
             		return "Form is not signed yet";
+        		}
+    	};
+
+    	class FormNameUnknown : public std::exception {
+    		public:
+        		virtual const char* what() const throw() {
+            		return "Form name doesn't exist";
         		}
     	};
 
