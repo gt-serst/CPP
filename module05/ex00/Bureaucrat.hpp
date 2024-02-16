@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:40:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/12 16:11:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:44:52 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class Bureaucrat{
 
-	public:	
+	public:
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat(void);
 		std::string	getName(void) const;
@@ -28,18 +28,18 @@ class Bureaucrat{
 		void	Upgrade(void);
 		void	Downgrade(void);
 
-    	class GradeTooHighException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too high";
-        		}
-    	};
-    	class GradeTooLowException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too low";
-        		}
-    	};
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char* what() const throw() {
+					return "Grade is too high";
+				}
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw() {
+					return "Grade is too low";
+				}
+		};
 
 	private:
 		std::string const	_name;
