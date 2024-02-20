@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
+/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:58:30 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/19 20:45:47 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/20 11:18:23 by geraudtsers      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include <string>
 #include <limits>
+#include <iomanip>
+#include <cmath>
 
 static bool	isChar(std::string& input)
 {
@@ -67,7 +69,7 @@ static void	toChar(std::string& input)
 	double	double_value = static_cast<double>(char_value);
 	std::cout << "char: " << char_value << std::endl;
 	std::cout << "int: " << int_value << std::endl;
-	std::cout << "float: " << float_value << "f" << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
 	std::cout << "double: " << double_value << std::endl;
 }
 
@@ -78,21 +80,27 @@ static void	toInt(std::string& input)
 	try
 	{
 		int_value = stoi(input);
-		std::cout << "int: " << int_value << std::endl;
 	}
 	catch (const std::exception& e)
 	{
+		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return;
 	}
 	char	char_value = static_cast<char>(int_value);
 	float	float_value = static_cast<float>(int_value);
 	double	double_value = static_cast<double>(int_value);
 	std::cout << "char: ";
-	if (!std::isprint(char_value))
+	if (float_value < 32 || float_value == 127)
 		std::cout << "Non displayable" << std::endl;
+	else if (float_value > 127)
+		std::cout << "impossible" << std::endl;
 	else
 		std::cout << char_value << std::endl;
-	std::cout << "float: " << float_value << "f" << std::endl;
+	std::cout << "int: " << int_value << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
 	std::cout << "double: " << double_value << std::endl;
 }
 
@@ -103,25 +111,33 @@ static void	toFloat(std::string& input)
 	try
 	{
 		float_value = stof(input);
-		std::cout << "float: " << float_value << "f" << std::endl;
 	}
 	catch (const std::exception& e)
 	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
 		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return;
 	}
 	char	char_value = static_cast<char>(float_value);
 	int		int_value = static_cast<int>(float_value);
 	double	double_value = static_cast<double>(float_value);
 	std::cout << "char: ";
-	if (!std::isprint(char_value))
+	if (float_value < 32 || float_value == 127)
 		std::cout << "Non displayable" << std::endl;
+	else if (float_value > 127 || std::isnan(float_value) || std::isinf(float_value))
+		std::cout << "impossible" << std::endl;
 	else
 		std::cout << char_value << std::endl;
 	std::cout << "int: ";
-	if (int_value == std::numeric_limits<int>::min())
+	if (float_value > std::numeric_limits<int>::max() ||
+		float_value < std::numeric_limits<int>::min() ||
+		std::isnan(float_value) || std::isinf(float_value))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << int_value << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
 	std::cout << "double: " << double_value << std::endl;
 }
 
@@ -132,26 +148,39 @@ static void	toDouble(std::string& input)
 	try
 	{
 		double_value = stod(input);
-		std::cout << "double: " << double_value << std::endl;
 	}
 	catch (const std::exception& e)
 	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
 		std::cout << "double: impossible" << std::endl;
+		return;
 	}
 	char	char_value = static_cast<char>(double_value);
 	int		int_value = static_cast<int>(double_value);
 	float	float_value = static_cast<float>(double_value);
 	std::cout << "char: ";
-	if (!std::isprint(char_value))
+	if (double_value < 32 || double_value == 127)
 		std::cout << "Non displayable" << std::endl;
+	else if (double_value > 127 || std::isnan(double_value) || std::isinf(double_value))
+		std::cout << "impossible" << std::endl;
 	else
 		std::cout << char_value << std::endl;
 	std::cout << "int: ";
-	if (int_value == std::numeric_limits<int>::min())
+	if (double_value  > std::numeric_limits<int>::max() ||
+		double_value < std::numeric_limits<int>::min() ||
+		std::isnan(double_value) || std::isinf(double_value))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << int_value << std::endl;
-	std::cout << "float: " << float_value << "f" << std::endl;
+	std::cout << "float: ";
+	if (double_value  > std::numeric_limits<float>::max() ||
+		double_value < std::numeric_limits<float>::min())
+		std::cout << std::fixed << std::setprecision(1) << "impossible" << std::endl;
+	else
+		std::cout << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
+	std::cout << "double: " << double_value << std::endl;
 }
 
 void	ScalarConverter::convert(std::string& input)
