@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:44:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 14:09:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:25:34 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "Bureaucrat.hpp"
 #include <fstream>
 #include "AForm.hpp"
+
+ShrubberyCreationForm::ShrubberyCreationForm(void){
+
+	return;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target){
 
@@ -28,7 +33,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm & src){
 
 ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
 
-	this->_target = rhs._target;
+	(void)rhs;
 	return (*this);
 }
 

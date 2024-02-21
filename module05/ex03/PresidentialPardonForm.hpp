@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:54:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:10:50 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:23:33 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@ class Bureaucrat;
 class PresidentialPardonForm : public AForm{
 
 	public:
+		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string target);
-		virtual ~PresidentialPardonForm(void);	
+		PresidentialPardonForm(PresidentialPardonForm & src);
+		PresidentialPardonForm &	operator=(PresidentialPardonForm const & rhs);
+		virtual ~PresidentialPardonForm(void);
 
 		class GradeTooHighException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too high";
-        		}
-    	};
-    	class GradeTooLowException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too low";
-        		}
-    	};
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 		virtual void	action(void) const;
 

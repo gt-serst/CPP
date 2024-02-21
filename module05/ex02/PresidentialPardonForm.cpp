@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:55:39 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 14:09:30 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:22:54 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+PresidentialPardonForm::PresidentialPardonForm(void){
+
+	return;
+}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target){
 
@@ -27,7 +32,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm & src){
 
 PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs){
 
-	this->_target = rhs._target;
+	(void)rhs;
 	return (*this);
 }
 

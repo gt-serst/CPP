@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:51:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:16:27 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:25:17 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,20 @@ class Bureaucrat;
 class RobotomyRequestForm : public AForm{
 
 	public:
+		RobotomyRequestForm(void);
 		RobotomyRequestForm(const std::string target);
-		~RobotomyRequestForm(void);	
+		RobotomyRequestForm(RobotomyRequestForm & src);
+		RobotomyRequestForm &	operator=(RobotomyRequestForm const & rhs);
+		~RobotomyRequestForm(void);
 
 		class GradeTooHighException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too high";
-        		}
-    	};
-    	class GradeTooLowException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too low";
-        		}
-    	};
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 		virtual void	action(void) const;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:44:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 13:38:13 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:26:43 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,41 @@
 #include <fstream>
 #include "AForm.hpp"
 
+ShrubberyCreationForm::ShrubberyCreationForm(void){
+
+	return;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target){
 
 	return;
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm & src){
+
+	*this = src;
+	return;
+}
+
+ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs){
+
+	(void)rhs;
+	return (*this);
+}
+
 ShrubberyCreationForm::~ShrubberyCreationForm(void){
 
 	return;
+}
+
+const char*	ShrubberyCreationForm::GradeTooHighException::what() const throw(){
+
+	return ("Grade is too high");
+}
+
+const char*	ShrubberyCreationForm::GradeTooLowException::what() const throw(){
+
+	return ("Grade is too low");
 }
 
 void	ShrubberyCreationForm::action(void) const{

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:40:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 11:30:21 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:09:28 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-
 # define BUREAUCRAT_HPP
 
 #include <string>
@@ -23,26 +22,25 @@ class Form;
 
 class Bureaucrat{
 
-	public:	
+	public:
+		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
+		Bureaucrat(Bureaucrat & src);
+		Bureaucrat &	operator=(Bureaucrat const & rhs);
 		~Bureaucrat(void);
 		std::string	getName(void) const;
 		int	getGrade(void) const;
 		void	Upgrade(void);
 		void	Downgrade(void);
 
-    	class GradeTooHighException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too high";
-        		}
-    	};
-    	class GradeTooLowException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too low";
-        		}
-    	};
+		class GradeTooHighException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 		void	signForm(Form& f);
 

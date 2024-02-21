@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:53:22 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 14:09:15 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:24:40 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+
+RobotomyRequestForm::RobotomyRequestForm(void){
+
+	return;
+}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target){
 
@@ -27,7 +32,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm & src){
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs){
 
-	this->_target = rhs._target;
+	(void)rhs;
 	return (*this);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:38:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 15:48:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:19:16 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,43 +20,38 @@ class Bureaucrat;
 class AForm{
 
 	public:
+		AForm(void);
 		AForm(const std::string name, int const signing_grade, int const executing_grade);
+		AForm(AForm & src);
+		AForm &	operator=(AForm const & rhs);
 		virtual ~AForm(void);
 		std::string	getName(void) const;
 		bool	getIsSigned(void) const;
 		int	getSigningGrade(void) const;
 		int	getExecutingGrade(void) const;
 		void	beSigned(Bureaucrat const & b);
-		
+
 		class GradeTooHighException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too high";
-        		}
-    	};
-    	class GradeTooLowException : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Grade is too low";
-        		}
-    	};
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 		virtual void	action(void) const = 0;
 		void	execute(Bureaucrat const & executor) const;
 
-    	class FormNotSignedYet : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Form is not signed yet";
-        		}
-    	};
+		class FormNotSignedYet : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
-    	class FormNameUnknown : public std::exception {
-    		public:
-        		virtual const char* what() const throw() {
-            		return "Form name doesn't exist";
-        		}
-    	};
+		class FormNameUnknown : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
 
 	private:
 		const std::string _name;
