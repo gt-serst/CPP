@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 15:48:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:48:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,34 @@ int main(void)
 	try
 	{
 		Intern	someRandomIntern;
-		AForm*	rrf;
 		Bureaucrat b("bob", 1);
-		rrf = someRandomIntern.makeForm("PresidentialPardonForm", "home");
-		b.signForm(*rrf);
-		b.executeForm(*rrf);
+		AForm*	f;
+		f = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
+		b.signForm(*f);
+		b.executeForm(*f);
 		std::cout << b << std::endl;
-		std::cout << *rrf << std::endl;
-		delete rrf;
+		std::cout << *f << std::endl;
+		delete f;
+		AForm*	g;
+		g = someRandomIntern.makeForm("UnknownFormName", "Bender");
+		b.signForm(*g);
+		b.executeForm(*g);
+		std::cout << *g << std::endl;
+		delete g;
+		AForm*	h;
+		h = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
+		b.signForm(*h);
+		b.executeForm(*h);
+		std::cout << *h << std::endl;
+		delete h;
+	}
+	catch (Bureaucrat::GradeTooHighException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	catch (AForm::GradeTooHighException& e)
 	{

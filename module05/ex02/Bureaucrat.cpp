@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:20:27 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:38:39 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 void	Bureaucrat::signForm(AForm & f) const{
+
 	try
 	{
 		f.beSigned(*this);
@@ -100,9 +101,13 @@ void	Bureaucrat::executeForm(AForm const & form) const{
 		form.execute(*this);
 		std::cout << *this << " executed " << form.getName() << std::endl;
 	}
+	catch (AForm::FormNotSignedYet& e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
 	catch (AForm::GradeTooLowException& e)
 	{
-		std::cout << "Couldn't execute the form because " << e.what() << std::endl;
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:07:13 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/21 11:52:08 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:22:45 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "C.hpp"
 #include <iostream>
 #include <random>
-#include <ctime>
 
 Base* generate(void)
 {
@@ -26,18 +25,22 @@ Base* generate(void)
 
 	int choice = dis(gen);
 
-	switch (choice) {
-		case 1: {
+	switch (choice)
+	{
+		case 1:
+		{
 			A* obj;
 			obj = new A;
 			return (obj);
 		}
-		case 2: {
+		case 2:
+		{
 			B* obj;
 			obj = new B;
 			return (obj);
 		}
-		case 3: {
+		case 3:
+		{
 			C* obj;
 			obj = new C;
 			return (obj);

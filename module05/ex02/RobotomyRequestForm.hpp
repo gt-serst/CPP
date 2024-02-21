@@ -6,17 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:51:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:56:17 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:29:13 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
-# include "Bureaucrat.hpp"
 # include "AForm.hpp"
-
-class Bureaucrat;
 
 class RobotomyRequestForm : public AForm{
 

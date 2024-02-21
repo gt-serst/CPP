@@ -6,17 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:41:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:56:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:29:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-# include "Bureaucrat.hpp"
 # include "AForm.hpp"
-
-class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm{
 

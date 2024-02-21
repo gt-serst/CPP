@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:36:59 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:20:56 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 17:40:40 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,7 @@ void	AForm::execute(Bureaucrat const & executor) const{
 		throw GradeTooLowException();
 	}
 	else
-	{
-		std::cout << "Congratulation, the form's action is running" << std::endl;
 		this->action();
-	}
 }
 
 const char*	AForm::FormNotSignedYet::what() const throw(){

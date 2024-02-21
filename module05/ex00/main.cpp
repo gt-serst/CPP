@@ -6,18 +6,15 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:10:13 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:04:04 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
 #include <iostream>
-#include "Bureaucrat.hpp"
 
 int	main(void)
 {
-
 	try
 	{
 		Bureaucrat highGradeBureaucrat("HighGradeBureaucrat", 0);

@@ -6,16 +6,17 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:12:55 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:55 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:14:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
+# include <string>
+# include <iostream>
+# include <exception>
 # include "Bureaucrat.hpp"
-
-class Bureaucrat;
 
 class Form{
 
@@ -41,7 +42,7 @@ class Form{
 		};
 
 	private:
-		const std::string _name;
+		const std::string	_name;
 		bool	_is_signed;
 		int const	_signing_grade;
 		int const	_executing_grade;

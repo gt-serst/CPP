@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:42:35 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:26 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:13:02 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define ICHARACTER_HPP
 
 # include <string>
-# include "AMateria.hpp"
 
-//Forward declaration to avoid circular dependance
 class AMateria;
 
 class ICharacter{
