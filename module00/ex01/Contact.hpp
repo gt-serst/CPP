@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:49:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/17 14:18:03 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:00:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Contact{
 

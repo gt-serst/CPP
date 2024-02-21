@@ -6,16 +6,16 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:48:58 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 15:57:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:55:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include <string>
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+# include <string>
+# include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Character : public ICharacter{
 

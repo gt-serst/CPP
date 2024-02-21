@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:53:38 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 12:25:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:57:02 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-#include <string>
+# include <string>
 
 class ScalarConverter{
 

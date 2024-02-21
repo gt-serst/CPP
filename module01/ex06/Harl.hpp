@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:30:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/15 13:26:08 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:59:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef HARL_HPP
+# define HARL_HPP
+
+# include <string>
 
 class Harl{
 
@@ -24,3 +27,5 @@ class Harl{
 		void	warning(void);
 		void	error(void);
 };
+
+#endif

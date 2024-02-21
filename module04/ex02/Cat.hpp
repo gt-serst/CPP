@@ -6,15 +6,15 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:46:24 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:21:14 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:54:47 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Cat : public AAnimal{
 

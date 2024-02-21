@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:37:07 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 15:56:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:54:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AANIMAL_HPP
 # define AANIMAL_HPP
 
-#include <string>
+# include <string>
 
 class AAnimal{
 

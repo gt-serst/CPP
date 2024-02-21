@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   B.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:03:37 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/20 12:04:45 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/21 15:57:23 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef B_HPP
 # define B_HPP
 
-#include "Base.hpp"
+# include "Base.hpp"
 
 class B : public Base{};
 

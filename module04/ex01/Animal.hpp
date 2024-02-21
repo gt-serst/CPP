@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:16 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/05 16:36:52 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:54:14 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-#include <string>
+# include <string>
 
 class Animal{
 

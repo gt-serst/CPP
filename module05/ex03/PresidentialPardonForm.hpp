@@ -6,15 +6,15 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:54:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:23:33 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:56:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
+# include "Bureaucrat.hpp"
+# include "AForm.hpp"
 
 class Bureaucrat;
 

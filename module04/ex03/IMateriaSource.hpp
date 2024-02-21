@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:35:04 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/07 16:45:08 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:55:30 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
-#include <string>
-#include "AMateria.hpp"
+# include <string>
+# include "AMateria.hpp"
 
 class IMateriaSource{
 

@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:12:55 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:11:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:55:55 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 

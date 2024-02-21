@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:48:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:21:57 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:55:00 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
 # define WRONGCAT_HPP
 
-#include "WrongAnimal.hpp"
+# include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal{
 

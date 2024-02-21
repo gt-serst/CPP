@@ -6,14 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 15:19:28 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 09:58:24 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:58:20 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef POINT_HPP
 # define POINT_HPP
 
-#include "Fixed.hpp"
+# include "Fixed.hpp"
 
 class Point{
 public:

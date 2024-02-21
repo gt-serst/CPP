@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:54:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/13 15:48:20 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:56:41 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
 # define INTERN_HPP
 
-#include "AForm.hpp"
+# include "AForm.hpp"
 
 class Intern{
 

@@ -6,15 +6,15 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:19:07 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:21:36 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:54:51 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-#include "AAnimal.hpp"
-#include "Brain.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Dog : public AAnimal{
 
