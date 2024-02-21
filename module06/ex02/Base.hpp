@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:02:25 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/20 12:03:16 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/21 12:32:01 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Base{
 
 	public:
-	virtual ~Base(){};
+		virtual ~Base(void);
 };
 
 #endif

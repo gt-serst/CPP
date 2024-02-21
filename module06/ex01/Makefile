@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+         #
+#    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/02/20 12:05:45 by geraudtsers      ###   ########.fr        #
+#    Updated: 2024/02/21 12:08:04 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
-		  Serializer.cpp\
+		  Serializer.cpp
 
 NAME	= Serializer
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:58:30 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/20 11:18:23 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/02/21 12:29:10 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,27 @@
 #include <limits>
 #include <iomanip>
 #include <cmath>
+
+ScalarConverter::ScalarConverter(void){
+
+	return;
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter & src){
+
+	*this = src;
+	return;
+}
+
+ScalarConverter &	ScalarConverter::operator=(ScalarConverter const & rhs){
+
+	return *this;
+}
+
+ScalarConverter::~ScalarConverter(void){
+
+	return;
+}
 
 static bool	isChar(std::string& input)
 {
@@ -67,7 +88,7 @@ static void	toChar(std::string& input)
 	int		int_value = static_cast<int>(char_value);
 	float	float_value = static_cast<float>(char_value);
 	double	double_value = static_cast<double>(char_value);
-	std::cout << "char: " << char_value << std::endl;
+	std::cout << "char: " << "'" << char_value << "'" << std::endl;
 	std::cout << "int: " << int_value << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
 	std::cout << "double: " << double_value << std::endl;
@@ -93,12 +114,12 @@ static void	toInt(std::string& input)
 	float	float_value = static_cast<float>(int_value);
 	double	double_value = static_cast<double>(int_value);
 	std::cout << "char: ";
-	if (float_value < 32 || float_value == 127)
-		std::cout << "Non displayable" << std::endl;
-	else if (float_value > 127)
+	if (float_value > 127 || float_value < 0)
 		std::cout << "impossible" << std::endl;
+	else if (float_value < 32 || float_value == 127)
+		std::cout << "Non displayable" << std::endl;
 	else
-		std::cout << char_value << std::endl;
+		std::cout << "'" << char_value << "'" << std::endl;
 	std::cout << "int: " << int_value << std::endl;
 	std::cout << "float: " << std::fixed << std::setprecision(1) << float_value << "f" << std::endl;
 	std::cout << "double: " << double_value << std::endl;
@@ -124,12 +145,13 @@ static void	toFloat(std::string& input)
 	int		int_value = static_cast<int>(float_value);
 	double	double_value = static_cast<double>(float_value);
 	std::cout << "char: ";
-	if (float_value < 32 || float_value == 127)
-		std::cout << "Non displayable" << std::endl;
-	else if (float_value > 127 || std::isnan(float_value) || std::isinf(float_value))
+	if (float_value > 127 || float_value < 0
+		|| std::isnan(float_value) || std::isinf(float_value))
 		std::cout << "impossible" << std::endl;
+	else if (float_value < 32 || float_value == 127)
+		std::cout << "Non displayable" << std::endl;
 	else
-		std::cout << char_value << std::endl;
+		std::cout << "'" << char_value << "'" << std::endl;
 	std::cout << "int: ";
 	if (float_value > std::numeric_limits<int>::max() ||
 		float_value < std::numeric_limits<int>::min() ||
@@ -161,12 +183,13 @@ static void	toDouble(std::string& input)
 	int		int_value = static_cast<int>(double_value);
 	float	float_value = static_cast<float>(double_value);
 	std::cout << "char: ";
-	if (double_value < 32 || double_value == 127)
-		std::cout << "Non displayable" << std::endl;
-	else if (double_value > 127 || std::isnan(double_value) || std::isinf(double_value))
+	if (double_value > 127 || double_value < 0
+		|| std::isnan(double_value) || std::isinf(double_value))
 		std::cout << "impossible" << std::endl;
+	else if (double_value < 32 || double_value == 127)
+		std::cout << "Non displayable" << std::endl;
 	else
-		std::cout << char_value << std::endl;
+		std::cout << "'" << char_value << "'" << std::endl;
 	std::cout << "int: ";
 	if (double_value  > std::numeric_limits<int>::max() ||
 		double_value < std::numeric_limits<int>::min() ||
@@ -185,6 +208,8 @@ static void	toDouble(std::string& input)
 
 void	ScalarConverter::convert(std::string& input)
 {
+	if (input[0] == '\0')
+		return;
 	if (isChar(input))
 		toChar(input);
 	else if (isInt(input))

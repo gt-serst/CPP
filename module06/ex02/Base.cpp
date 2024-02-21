@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 11:32:29 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/21 12:27:01 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/21 12:32:13 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/21 12:32:31 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#include "Base.hpp"
 
-#include "Data.hpp"
-#include <cstdint>
+Base::~Base(void){
 
-class Serializer{
-
-	public:
-		Serializer(void);
-		Serializer(Serializer & src);
-		Serializer &	operator=(Serializer const & rhs);
-		~Serializer(void);
-		static uintptr_t	serialize(Data* ptr);
-		static Data*	deserialize(uintptr_t raw);
-};
-
-#endif
+	return;
+}
