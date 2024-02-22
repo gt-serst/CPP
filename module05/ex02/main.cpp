@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 17:32:17 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:44:01 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ int main(void)
 {
 	try
 	{
-		Bureaucrat b("bob", 1);
+		Bureaucrat b("bureaucrat", 1);
 		AForm* f = new PresidentialPardonForm("home");
-		//b.signForm(*f);
-		b.Downgrade();
+		b.signForm(*f);
 		b.executeForm(*f);
 		std::cout << b << std::endl;
 		std::cout << *f << std::endl;

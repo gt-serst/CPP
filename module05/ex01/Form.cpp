@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:17:51 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:20:34 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:30:28 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	Form::beSigned(Bureaucrat& b){
 	if (b.getGrade() <= this->_signing_grade)
 		this->_is_signed = true;
 	else
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 const char*	Form::GradeTooHighException::what() const throw(){

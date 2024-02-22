@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 17:48:46 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 11:51:20 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 	try
 	{
 		Intern	someRandomIntern;
-		Bureaucrat b("bob", 1);
+		Bureaucrat b("bureaucrat", 1);
 		AForm*	f;
 		f = someRandomIntern.makeForm("PresidentialPardonForm", "Bender");
 		b.signForm(*f);
@@ -34,13 +34,13 @@ int main(void)
 		std::cout << *f << std::endl;
 		delete f;
 		AForm*	g;
-		g = someRandomIntern.makeForm("UnknownFormName", "Bender");
+		g = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
 		b.signForm(*g);
 		b.executeForm(*g);
 		std::cout << *g << std::endl;
 		delete g;
 		AForm*	h;
-		h = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
+		h = someRandomIntern.makeForm("UnknownFormName", "Bender");
 		b.signForm(*h);
 		b.executeForm(*h);
 		std::cout << *h << std::endl;
