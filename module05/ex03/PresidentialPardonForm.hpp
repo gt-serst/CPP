@@ -6,17 +6,14 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:54:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:56:46 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:17:23 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRESIDENTIALPARDONFORM_HPP
 # define PRESIDENTIALPARDONFORM_HPP
 
-# include "Bureaucrat.hpp"
 # include "AForm.hpp"
-
-class Bureaucrat;
 
 class PresidentialPardonForm : public AForm{
 
@@ -26,16 +23,6 @@ class PresidentialPardonForm : public AForm{
 		PresidentialPardonForm(PresidentialPardonForm & src);
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const & rhs);
 		virtual ~PresidentialPardonForm(void);
-
-		class GradeTooHighException : public std::exception {
-			public:
-				virtual const char* what() const throw();
-		};
-		class GradeTooLowException : public std::exception {
-			public:
-				virtual const char* what() const throw();
-		};
-
 		virtual void	action(void) const;
 
 	private:

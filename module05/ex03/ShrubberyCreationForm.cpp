@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:44:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:26:43 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:16:48 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,6 @@ ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 ShrubberyCreationForm::~ShrubberyCreationForm(void){
 
 	return;
-}
-
-const char*	ShrubberyCreationForm::GradeTooHighException::what() const throw(){
-
-	return ("Grade is too high");
-}
-
-const char*	ShrubberyCreationForm::GradeTooLowException::what() const throw(){
-
-	return ("Grade is too low");
 }
 
 void	ShrubberyCreationForm::action(void) const{

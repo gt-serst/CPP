@@ -6,11 +6,9 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:55:47 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/22 11:51:20 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:15:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "Bureaucrat.hpp"
 
 #include <iostream>
 #include "Bureaucrat.hpp"

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:53:22 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/22 11:52:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:16:43 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,6 @@ RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &
 RobotomyRequestForm::~RobotomyRequestForm(void){
 
 	return;
-}
-
-const char*	RobotomyRequestForm::GradeTooHighException::what() const throw(){
-
-	return ("Grade is too high");
-}
-
-const char*	RobotomyRequestForm::GradeTooLowException::what() const throw(){
-
-	return ("Grade is too low");
 }
 
 void	RobotomyRequestForm::action(void) const{
