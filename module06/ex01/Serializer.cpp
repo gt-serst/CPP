@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:32:27 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/21 12:29:36 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/23 11:54:01 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ Serializer::Serializer(Serializer & src){
 
 Serializer &	Serializer::operator=(Serializer const & rhs){
 
-	return *this;
+	(void)rhs;
+	return (*this);
 }
 
 Serializer::~Serializer(void){
@@ -37,7 +38,9 @@ Serializer::~Serializer(void){
 
 uintptr_t	Serializer::serialize(Data* ptr){
 
-	std::uintptr_t raw = reinterpret_cast<std::uintptr_t>(ptr);
+	std::uintptr_t raw;
+
+	raw = reinterpret_cast<std::uintptr_t>(ptr);
 	return (raw);
 }
 

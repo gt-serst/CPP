@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:07:13 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/21 17:22:45 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/23 12:15:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <random>
 
-Base* generate(void)
+Base*	generate(void)
 {
 	std::random_device rd;
 	std::mt19937 gen(rd());
@@ -51,7 +51,7 @@ Base* generate(void)
 	}
 }
 
-void identify(Base* p)
+void	identify(Base* p)
 {
 	if (dynamic_cast<A*>(p))
 		std::cout << "This is a class A object" << std::endl;
@@ -63,7 +63,7 @@ void identify(Base* p)
 		std::cout << "This is an invalid type" << std::endl;
 }
 
-void identify(Base& p)
+void	identify(Base& p)
 {
 	try
 	{
