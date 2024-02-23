@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/22 16:56:33 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/23 13:09:42 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/02/23 13:54:06 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/02/23 17:32:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Array.hpp"
+#include <string>
 #include <iostream>
-#include "iter.hpp"
 
 int	main(void)
 {
-	//int	array[] = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-	std::string	array[] = {"Hello", "my", "name", "is", "Johnny", "."};
+	Array<int> int_array(10);
+	//Array<std::string> string_array(20);
 
-	//iter<int, void(*)(int&)>(array, sizeof(array)/sizeof(array[0]), f);
-	iter<std::string, void(*)(std::string&)>(array, sizeof(array)/sizeof(array[0]), f);
-	for (size_t i = 0; i < sizeof(array)/sizeof(array[0]); i++)
-		std::cout << array[i] << std::endl;
+	std::cout << int_array.size() << std::endl;
+	//std::cout << string_array.size() << std::endl;
 	return (0);
 }

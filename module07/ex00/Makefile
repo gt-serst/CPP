@@ -6,13 +6,13 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/02/22 16:54:55 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/02/23 14:53:16 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
 
-NAME	= Templates
+NAME	= Whatever
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

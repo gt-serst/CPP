@@ -6,13 +6,13 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/02/23 12:49:10 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/02/23 17:34:29 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
 
-NAME	= Iter
+NAME	= Array
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
