@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:54:03 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/26 19:26:44 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/27 11:22:25 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,19 @@ class Array{
 
 		Array(Array & src){
 
-			this->_array = new T[src.size()];
+			this->_size = src._size;
+			this->_array = new T[src._size];
 			*this = src;
 			return;
 		}
 
 		Array &	operator=(Array const & rhs){
 
-			delete[] this->_array;
-			this->_array = new T[rhs.size()];
-			for (size_t i = 0; i < rhs.size(); i++)
+			if (this->_array)
+				delete[] this->_array;
+			this->_size = rhs._size;
+			this->_array = new T[rhs._size];
+			for (size_t i = 0; i < rhs._size; i++)
 				this->_array[i] = rhs._array[i];
 			return (*this);
 		}
@@ -59,13 +62,13 @@ class Array{
 
 			return (this->_size);
 		}
-		
+
 		T & operator[](unsigned int i) {
-        	
-			if (i >= this->_array->size())
-            	throw IndexOutOfBoundsException();
-        	return _array[i];
-    	}
+
+			if (i >= this->_size)
+				throw IndexOutOfBoundsException();
+			return _array[i];
+		}
 
 		class IndexOutOfBoundsException : public std::exception {
 			public:
@@ -74,9 +77,9 @@ class Array{
 					return ("Index out of bounds");
 				}
 		};
-	
+
 	private:
-		T* _array;
+		T*				_array;
 		unsigned int	_size;
 };
 

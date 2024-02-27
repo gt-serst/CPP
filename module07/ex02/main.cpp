@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:54:06 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/26 19:26:49 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/27 10:10:30 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,26 @@ int	main(void)
 		std::cout << default_array.size() << std::endl;
 		std::cout << int_array.size() << std::endl;
 		std::cout << string_array.size() << std::endl;
+	}
+	catch (Array<int>::IndexOutOfBoundsException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Array<int> int_array(10);
+		int_array[0] = 19;
+
+		std::cout << int_array[0] << std::endl;
+	}
+	catch (Array<int>::IndexOutOfBoundsException& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	try
+	{
+		Array<int> int_array(10);
+		int_array[-2] = 0;
 	}
 	catch (Array<int>::IndexOutOfBoundsException& e)
 	{
