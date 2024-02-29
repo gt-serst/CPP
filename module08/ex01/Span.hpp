@@ -6,14 +6,14 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:03:38 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/27 16:45:58 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:17:53 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-# include <list>
+# include <vector>
 # include <stdexcept>
 
 class Span{
@@ -27,7 +27,7 @@ class Span{
 		void	addNumber(int number);
 		int		shortestSpan(void);
 		int		longestSpan(void);
-		void	addSeveralNumbers(std::list<int>::const_iterator it, std::list<int>::const_iterator ite);
+		void	addSeveralNumbers(std::vector<int>::const_iterator it, std::vector<int>::const_iterator ite);
 
 		class SpanIsFull : public std::exception{
 	
@@ -47,8 +47,10 @@ class Span{
 				}
 		};
 
+		void	display(void);
+
 	private:
-		std::list<int>	_lst;
+		std::vector<int>	_vec;
 		unsigned int	_size;
 };
 

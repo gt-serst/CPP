@@ -6,14 +6,17 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 13:07:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/27 14:03:01 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:22:31 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <list>
-#include <algorithm>
-#include <stdexcept>
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
+
+# include <iostream>
+# include <list>
+# include <algorithm>
+# include <stdexcept>
 
 class ElementNotFound : public std::exception{
 
@@ -35,3 +38,5 @@ void	easyfind(T lst, int to_find){
 	else
 		throw ElementNotFound();
 }
+
+#endif

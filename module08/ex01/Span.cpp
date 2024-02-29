@@ -6,14 +6,15 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:11:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/27 16:46:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/02/29 10:35:23 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+#include <iostream>
+#include <vector>
 #include <algorithm>
 #include <cstdlib>
-#include <iostream>
 
 Span::Span(void){
 
@@ -27,7 +28,7 @@ Span::Span(unsigned int N) : _size(N){
 
 Span::Span(Span const & src){
 
-	this->_lst = src._lst;
+	this->_vec = src._vec;
 	this->_size = src._size;
 	*this = src;
 	return;
@@ -35,7 +36,7 @@ Span::Span(Span const & src){
 
 Span &	Span::operator=(Span const & rhs){
 
-	this->_lst = rhs._lst;
+	this->_vec = rhs._vec;
 	this->_size = rhs._size;
 	return (*this);
 }
@@ -47,25 +48,25 @@ Span::~Span(void){
 
 void	Span::addNumber(int number){
 
-	if (this->_lst.size() < this->_size)	
-		this->_lst.push_back(number);
+	if (this->_vec.size() < this->_size)
+		this->_vec.push_back(number);
 	else
-		throw SpanIsFull();
+		throw SpanIsFull();	
 }
 
 int	Span::shortestSpan(void){
 
-	if (this->_lst.size() > 1)
+	if (this->_vec.size() > 1)
 	{
-		std::list<int>::const_iterator	it1;
-		std::list<int>::const_iterator	ite1 = this->_lst.end();
-		std::list<int>::const_iterator	it2;
-		std::list<int>::const_iterator	ite2 = this->_lst.end();
+		std::vector<int>::const_iterator	it1;
+		std::vector<int>::const_iterator	ite1 = this->_vec.end();
+		std::vector<int>::const_iterator	it2;
+		std::vector<int>::const_iterator	ite2 = this->_vec.end();
 		int	dist;
-		int	sml_dist = *this->_lst.begin() - *std::next(this->_lst.begin(), 1);
-		for (it1 = this->_lst.begin(); it1 != ite1; ++it1)
+		int	sml_dist = abs(*this->_vec.begin() - *std::next(this->_vec.begin(), 1));
+		for (it1 = this->_vec.begin(); it1 != ite1; ++it1)
 		{
-			for (it2 = this->_lst.begin(); it2 != ite2; ++it2)
+			for (it2 = this->_vec.begin(); it2 != ite2; ++it2)
 			{
 				if (it1 != it2)
 				{
@@ -83,22 +84,25 @@ int	Span::shortestSpan(void){
 
 int	Span::longestSpan(void){
 
-	if (this->_lst.size() > 1)
-		return (*std::max_element(this->_lst.begin(), this->_lst.end()) - 
-				*std::min_element(this->_lst.begin(), this->_lst.end()));
+	if (this->_vec.size() > 1)
+		return (*std::max_element(this->_vec.begin(), this->_vec.end()) - 
+				*std::min_element(this->_vec.begin(), this->_vec.end()));
 	else
 		throw SpanIsEmpty();
 }
 
-void	Span::addSeveralNumbers(std::list<int>::const_iterator it, std::list<int>::const_iterator ite){
+void	Span::addSeveralNumbers(std::vector<int>::const_iterator it, std::vector<int>::const_iterator ite){
 
-	if (this->_size() < this->_size)
-	{
-		while (it != ite)
-		{
-			this->_lst.push_back(*it);
-			it++;
-		}
+	if (this->_vec.size() < this->_size)
+		this->_vec.insert(this->_vec.end(), it, ite);
 	else
 		throw SpanIsFull();
+}
+
+void	Span::display(void){
+
+	std::vector<int>::const_iterator	it;
+	std::vector<int>::const_iterator	ite = this->_vec.end();
+	for (it = this->_vec.begin(); it != ite; ++it)
+		std::cout << *it << std::endl;
 }
