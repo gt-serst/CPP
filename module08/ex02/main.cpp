@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:48:21 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/29 17:36:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:14:03 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	//std::stack<int> s(mstack);
+
+	MutantStack<int> s(mstack);
+
+	std::cout << s.size() << std::endl;
 	
 	return (0);
 }
