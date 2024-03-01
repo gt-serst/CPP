@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/01 13:01:25 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:17:38 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src){
 Bureaucrat &	Bureaucrat::operator=(Bureaucrat const & rhs){
 
 	if (this != &rhs)
-			return;
-	this->_grade = rhs._grade;
+		this->_grade = rhs._grade;
 	return (*this);
 }
 
