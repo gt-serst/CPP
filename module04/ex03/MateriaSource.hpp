@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:36:58 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:35 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:59:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class MateriaSource : public IMateriaSource{
 
 	public:
 		MateriaSource(void);
-		MateriaSource(MateriaSource & src);
+		MateriaSource(MateriaSource const & src);
 		MateriaSource &	operator=(MateriaSource const & rhs);
 		virtual ~MateriaSource();
 		virtual void learnMateria(AMateria* m);

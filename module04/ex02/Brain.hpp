@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:46:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:54:42 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:51:58 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Brain{
 
 	public:
 		Brain(void);
-		Brain(Brain & src);
+		Brain(Brain const & src);
 		Brain &	operator=(Brain const & rhs);
 		~Brain(void);
 	private:

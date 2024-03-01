@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 13:49:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 09:07:22 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/03/01 13:19:03 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain(void){
 	return;
 }
 
-Brain::Brain(Brain & src){
+Brain::Brain(Brain const & src){
 
 	std::cout << "Copy constructor of Brain called" << std::endl;
 	*this = src;
@@ -28,13 +28,16 @@ Brain::Brain(Brain & src){
 
 Brain &	Brain::operator=(Brain const & rhs){
 
-	int	i;
-
-	i = 0;
-	while (i < 100)
+	if (this != &rhs)
 	{
-		this->_ideas[i] = rhs._ideas[i];
-		i++;
+		int	i;
+
+		i = 0;
+		while (i < 100)
+		{
+			this->_ideas[i] = rhs._ideas[i];
+			i++;
+		}
 	}
 	return *this;
 }

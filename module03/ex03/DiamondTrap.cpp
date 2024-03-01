@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:24:19 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 14:24:20 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:16:45 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	return;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap & src){
+DiamondTrap::DiamondTrap(DiamondTrap const & src){
 
 	std::cout << "Copy constructor of DiamondTrap called" << std::endl;
 	*this = src;
@@ -38,7 +38,8 @@ DiamondTrap::DiamondTrap(DiamondTrap & src){
 
 DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & rhs){
 
-	this->_name = rhs._name;
+	if (this != &rhs)
+		this->_name = rhs._name;
 	return *this;
 }
 

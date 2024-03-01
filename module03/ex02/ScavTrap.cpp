@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:19:52 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/22 13:21:34 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:16:05 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
 	std::cout << "Constructor of ScavTrap called" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap & src){
+ScavTrap::ScavTrap(ScavTrap const & src){
 
 	std::cout << "Copy constructor of ScavTrap called" << std::endl;
 	*this = src;
@@ -36,10 +36,13 @@ ScavTrap::ScavTrap(ScavTrap & src){
 
 ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs){
 
-	this->_name = rhs._name;
-	this->_hit_points = rhs._hit_points;
-	this->_energy_points = rhs._energy_points;
-	this->_attack_damage = rhs._attack_damage;
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hit_points = rhs._hit_points;
+		this->_energy_points = rhs._energy_points;
+		this->_attack_damage = rhs._attack_damage;
+	}
 	return *this;
 }
 

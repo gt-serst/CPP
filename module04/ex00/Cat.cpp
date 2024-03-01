@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:06:25 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:17:21 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Cat::Cat(void) : Animal("Cat"){
 	return;
 }
 
-Cat::Cat(Cat & src){
+Cat::Cat(Cat const & src){
 
 	std::cout << "Copy constructor of Cat called" << std::endl;
 	*this = src;
@@ -28,7 +28,8 @@ Cat::Cat(Cat & src){
 
 Cat &	Cat::operator=(Cat const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

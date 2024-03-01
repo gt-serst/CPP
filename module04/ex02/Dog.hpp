@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:19:07 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:54:51 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:54:26 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Dog : public AAnimal{
 
 	public:
 		Dog(void);
-		Dog(Dog & src);
+		Dog(Dog const & src);
 		Dog &	operator=(Dog const & rhs);
 		~Dog(void);
 		virtual void	makeSound(void) const;

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:48:25 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:00 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:54:57 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat : public WrongAnimal{
 
 	public:
 		WrongCat(void);
-		WrongCat(WrongCat & src);
+		WrongCat(WrongCat const & src);
 		WrongCat &	operator=(WrongCat const & rhs);
 		~WrongCat(void);
 		void	makeSound(void) const;

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 10:19:33 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 10:23:56 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:14:05 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ Fixed::~Fixed(void){
 
 Fixed &	Fixed::operator=(Fixed const & rhs){
 
-	this->_fixed_point_value = rhs.getRawBits();
-	return *this;
+	if (this != &rhs)
+		this->_fixed_point_value = rhs.getRawBits();
+	return (*this);
 }
 
 int	Fixed::getRawBits(void) const{

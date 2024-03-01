@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:32:27 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/23 11:54:01 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:24:48 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Serializer::Serializer(void){
 	return;
 }
 
-Serializer::Serializer(Serializer & src){
+Serializer::Serializer(Serializer const & src){
 
 	*this = src;
 	return;
@@ -27,7 +27,10 @@ Serializer::Serializer(Serializer & src){
 
 Serializer &	Serializer::operator=(Serializer const & rhs){
 
-	(void)rhs;
+	if (this != &rhs)
+	{
+		
+	}
 	return (*this);
 }
 

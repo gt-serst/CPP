@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:50:01 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 23:25:55 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/03/01 13:19:51 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ Character::Character(std::string character_name) : _name(character_name){
 	return;
 }
 
-Character::Character(Character & src){
+Character::Character(Character const & src){
 
 	int	i;
 
 	std::cout << "Copy constructor of Character called" << std::endl;
+	this->_name = src._name;
 	i = 0;
 	while (i < 4)
 	{
@@ -48,7 +49,6 @@ Character::Character(Character & src){
 			this->_inventory[i] = src._inventory[i]->clone();
 		i++;
 	}
-	*this = src;
 	return;
 }
 
@@ -56,20 +56,23 @@ Character &	Character::operator=(Character const & rhs){
 
 	int	i;
 
-	this->_name = rhs._name;
-	i = 0;
-	while (i < 4)
+	if (this != &rhs)
 	{
-		if (this->_inventory[i] != NULL)
-			delete this->_inventory[i];
-		i++;
-	}
-	i = 0;
-	while (i < 4)
-	{
-		if (rhs._inventory[i] != NULL)
-			this->_inventory[i] = rhs._inventory[i]->clone();
-		i++;
+		this->_name = rhs._name;
+		i = 0;
+		while (i < 4)
+		{
+			if (this->_inventory[i] != NULL)
+				delete this->_inventory[i];
+			i++;
+		}
+		i = 0;
+		while (i < 4)
+		{
+			if (rhs._inventory[i] != NULL)
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			i++;
+		}
 	}
 	return (*this);
 }

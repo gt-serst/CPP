@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:54:31 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/22 16:17:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:10:43 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PresidentialPardonForm : public AForm{
 	public:
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string target);
-		PresidentialPardonForm(PresidentialPardonForm & src);
+		PresidentialPardonForm(PresidentialPardonForm const & src);
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const & rhs);
 		virtual ~PresidentialPardonForm(void);
 		virtual void	action(void) const;

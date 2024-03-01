@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/22 11:30:37 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:20:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name){
 	return;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat & src){
+Bureaucrat::Bureaucrat(Bureaucrat const & src){
 
 	*this = src;
 	return;
@@ -38,7 +38,8 @@ Bureaucrat::Bureaucrat(Bureaucrat & src){
 
 Bureaucrat &	Bureaucrat::operator=(Bureaucrat const & rhs){
 
-	this->_grade = rhs._grade;
+	if (this != &rhs)
+		this->_grade = rhs._grade;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 14:15:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 17:42:10 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:23:33 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Intern::Intern(void){
 	return;
 }
 
-Intern::Intern(Intern & src){
+Intern::Intern(Intern const & src){
 
 	*this = src;
 	return;
@@ -30,7 +30,10 @@ Intern::Intern(Intern & src){
 
 Intern &	Intern::operator=(Intern const & rhs){
 
-	(void)rhs;
+	if (this != &rhs)
+	{
+
+	}
 	return (*this);
 }
 

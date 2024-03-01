@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 16:39:23 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 23:26:43 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/03/01 13:20:15 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ MateriaSource::MateriaSource(void){
 	return;
 }
 
-MateriaSource::MateriaSource(MateriaSource & src){
+MateriaSource::MateriaSource(MateriaSource const & src){
 
 	int	i;
 
@@ -39,7 +39,6 @@ MateriaSource::MateriaSource(MateriaSource & src){
 			this->_inventory[i] = src._inventory[i]->clone();
 		i++;
 	}
-	*this = src;
 	return;
 }
 
@@ -47,19 +46,22 @@ MateriaSource &	MateriaSource::operator=(MateriaSource const & rhs){
 
 	int	i;
 
-	i = 0;
-	while (i < 4)
+	if (this != &rhs)
 	{
-		if (this->_inventory[i] != NULL)
-			delete this->_inventory[i];
-		i++;
-	}
-	i = 0;
-	while (i < 4)
-	{
-		if (rhs._inventory[i] != NULL)
-			this->_inventory[i] = rhs._inventory[i]->clone();
-		i++;
+		i = 0;
+		while (i < 4)
+		{
+			if (this->_inventory[i] != NULL)
+				delete this->_inventory[i];
+			i++;
+		}
+		i = 0;
+		while (i < 4)
+		{
+			if (rhs._inventory[i] != NULL)
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			i++;
+		}
 	}
 	return (*this);
 }

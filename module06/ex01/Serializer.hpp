@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 11:32:29 by geraudtsers       #+#    #+#             */
-/*   Updated: 2024/02/23 12:32:16 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:25:04 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Serializer{
 
 	private:
 		Serializer(void);
-		Serializer(Serializer & src);
+		Serializer(Serializer const & src);
 		Serializer &	operator=(Serializer const & rhs);
 		~Serializer(void);
 };

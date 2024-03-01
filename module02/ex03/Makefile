@@ -6,14 +6,13 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/01/17 10:41:56 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/03/01 12:42:54 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
 		  Fixed.cpp\
 		  Point.cpp\
-		  bsp.cpp
 
 NAME	= Fixed
 

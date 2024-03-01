@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:11:46 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/29 10:35:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:26:31 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,17 @@ Span::Span(unsigned int N) : _size(N){
 
 Span::Span(Span const & src){
 
-	this->_vec = src._vec;
-	this->_size = src._size;
 	*this = src;
 	return;
 }
 
 Span &	Span::operator=(Span const & rhs){
 
-	this->_vec = rhs._vec;
-	this->_size = rhs._size;
+	if (this != &rhs)
+	{
+		this->_vec = rhs._vec;
+		this->_size = rhs._size;
+	}
 	return (*this);
 }
 
@@ -51,7 +52,7 @@ void	Span::addNumber(int number){
 	if (this->_vec.size() < this->_size)
 		this->_vec.push_back(number);
 	else
-		throw SpanIsFull();	
+		throw SpanIsFull();
 }
 
 int	Span::shortestSpan(void){
@@ -85,7 +86,7 @@ int	Span::shortestSpan(void){
 int	Span::longestSpan(void){
 
 	if (this->_vec.size() > 1)
-		return (*std::max_element(this->_vec.begin(), this->_vec.end()) - 
+		return (*std::max_element(this->_vec.begin(), this->_vec.end()) -
 				*std::min_element(this->_vec.begin(), this->_vec.end()));
 	else
 		throw SpanIsEmpty();

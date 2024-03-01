@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 12:22:04 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 17:47:59 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:45:56 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap{
 	public:
 		ClapTrap(void);
 		ClapTrap(std::string name);
-		ClapTrap(ClapTrap & src);
+		ClapTrap(ClapTrap const & src);
 		ClapTrap &	operator=(ClapTrap const & rhs);
 		~ClapTrap(void);
 		void	attack(const std::string & target);

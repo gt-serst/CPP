@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:12:55 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 16:14:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:01:59 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Form{
 	public:
 		Form(void);
 		Form(const std::string name, int const signing_grade, int const executing_grade);
-		Form(Form & src);
+		Form(Form const & src);
 		Form &	operator=(Form const & rhs);
 		~Form(void);
 		std::string	getName(void) const;

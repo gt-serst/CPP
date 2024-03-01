@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:12:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 23:33:48 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/03/01 13:19:34 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ AMateria::AMateria(std::string const & materia_type) : type(materia_type){
 	return;
 }
 
-AMateria::AMateria(AMateria & src){
+AMateria::AMateria(AMateria const & src){
 
 	std::cout << "Copy constructor of AMateria called" << std::endl;
 	*this = src;
@@ -35,7 +35,8 @@ AMateria::AMateria(AMateria & src){
 
 AMateria &	AMateria::operator=(AMateria const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return (*this);
 }
 

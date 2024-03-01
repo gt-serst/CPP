@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:37:39 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/06 11:37:44 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:18:50 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ AAnimal::AAnimal(std::string animal_type) : type(animal_type){
 	return;
 }
 
-AAnimal::AAnimal(AAnimal & src){
+AAnimal::AAnimal(AAnimal const & src){
 
 	std::cout << "Copy constructor of AAnimal is called" << std::endl;
 	*this = src;
@@ -34,7 +34,8 @@ AAnimal::AAnimal(AAnimal & src){
 
 AAnimal &	AAnimal::operator=(AAnimal const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

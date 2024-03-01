@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:38:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:56:02 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:02:14 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AForm{
 	public:
 		AForm(void);
 		AForm(const std::string name, int const signing_grade, int const executing_grade);
-		AForm(AForm & src);
+		AForm(AForm const & src);
 		AForm &	operator=(AForm const & rhs);
 		virtual ~AForm(void);
 		std::string	getName(void) const;

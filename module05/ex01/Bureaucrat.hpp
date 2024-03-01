@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 13:40:18 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 16:12:26 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:01:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Bureaucrat{
 	public:
 		Bureaucrat(void);
 		Bureaucrat(std::string name, int grade);
-		Bureaucrat(Bureaucrat & src);
+		Bureaucrat(Bureaucrat const & src);
 		Bureaucrat &	operator=(Bureaucrat const & rhs);
 		~Bureaucrat(void);
 		std::string	getName(void) const;

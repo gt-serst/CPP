@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:54:03 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/29 14:22:47 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:25:42 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,25 @@ class Array{
 			return;
 		}
 
-		Array(Array & src){
+		Array(Array const & src){
 
 			this->_size = src._size;
 			this->_array = new T[src._size];
-			*this = src;
+			for (size_t i = 0; i < src._size; i++)
+				this->_array[i] = src._array[i];
 			return;
 		}
 
 		Array &	operator=(Array const & rhs){
 
-			if (this->_array)
+			if (this != &rhs)
+			{
 				delete[] this->_array;
-			this->_size = rhs._size;
-			this->_array = new T[rhs._size];
-			for (size_t i = 0; i < rhs._size; i++)
-				this->_array[i] = rhs._array[i];
+				this->_size = rhs._size;
+				this->_array = new T[rhs._size];
+				for (size_t i = 0; i < rhs._size; i++)
+					this->_array[i] = rhs._array[i];
+			}
 			return (*this);
 		}
 

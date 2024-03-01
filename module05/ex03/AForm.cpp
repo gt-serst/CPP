@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:36:59 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 17:40:40 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:07:59 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ AForm::AForm(const std::string name, int const signing_grade, int const executin
 	return;
 }
 
-AForm::AForm(AForm & src) : _signing_grade(src._signing_grade), _executing_grade(src._executing_grade){
+AForm::AForm(AForm const & src) : _signing_grade(src._signing_grade), _executing_grade(src._executing_grade){
 
 	*this = src;
 	return;
@@ -35,7 +35,8 @@ AForm::AForm(AForm & src) : _signing_grade(src._signing_grade), _executing_grade
 
 AForm &	AForm::operator=(AForm const & rhs){
 
-	this->_is_signed = rhs._is_signed;
+	if (this != &rhs)
+		this->_is_signed = rhs._is_signed;
 	return (*this);
 }
 

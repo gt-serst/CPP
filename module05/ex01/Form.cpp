@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 16:17:51 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/22 11:30:28 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:20:58 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Form::Form(const std::string name, int const signing_grade, int const executing_
 	return;
 }
 
-Form::Form(Form & src) : _signing_grade(src._signing_grade), _executing_grade(src._executing_grade){
+Form::Form(Form const & src) : _signing_grade(src._signing_grade), _executing_grade(src._executing_grade){
 
 	*this = src;
 	return;
@@ -35,7 +35,8 @@ Form::Form(Form & src) : _signing_grade(src._signing_grade), _executing_grade(sr
 
 Form &	Form::operator=(Form const & rhs){
 
-	this->_is_signed = rhs._is_signed;
+	if (this != &rhs)
+		this->_is_signed = rhs._is_signed;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 14:24:24 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:57:42 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:46:57 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class DiamondTrap : public ScavTrap, public FragTrap{
 	public:
 		DiamondTrap(void);
 		DiamondTrap(std::string name);
-		DiamondTrap(DiamondTrap & src);
+		DiamondTrap(DiamondTrap const & src);
 		DiamondTrap &	operator=(DiamondTrap const & rhs);
 		~DiamondTrap(void);
 		void	whoAmI();

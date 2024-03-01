@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 10:58:30 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/23 17:35:49 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:24:12 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScalarConverter::ScalarConverter(void){
 	return;
 }
 
-ScalarConverter::ScalarConverter(ScalarConverter & src){
+ScalarConverter::ScalarConverter(ScalarConverter const & src){
 
 	*this = src;
 	return;
@@ -30,7 +30,10 @@ ScalarConverter::ScalarConverter(ScalarConverter & src){
 
 ScalarConverter &	ScalarConverter::operator=(ScalarConverter const & rhs){
 
-	(void)rhs;
+	if (this != &rhs)
+	{
+		
+	}
 	return (*this);
 }
 

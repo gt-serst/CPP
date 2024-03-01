@@ -1,7 +1,7 @@
 #ifndef MUTANTSTACK_TPP
 # define MUTANTSTACK_TPP
 
-#include "MutantStack.hpp"
+# include "MutantStack.hpp"
 
 template <typename T>
 MutantStack<T>::MutantStack(void){
@@ -11,7 +11,7 @@ MutantStack<T>::MutantStack(void){
 
 template <typename T>
 MutantStack<T>::MutantStack(MutantStack const & src){
-	
+
 	*this = src;
 	return;
 }
@@ -19,7 +19,8 @@ MutantStack<T>::MutantStack(MutantStack const & src){
 template <typename T>
 MutantStack<T> &	MutantStack<T>::operator=(MutantStack const & rhs){
 
-	this->_stack = rhs._stack;
+	if (this != &rhs)
+		this->_stack = rhs._stack;
 	return (*this);
 }
 

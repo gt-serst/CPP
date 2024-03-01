@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:30:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:13:31 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:17:35 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat"){
 	return;
 }
 
-WrongCat::WrongCat(WrongCat & src){
+WrongCat::WrongCat(WrongCat const & src){
 
 	std::cout << "Copy constructor of WrongCat called" << std::endl;
 	*this = src;
@@ -28,7 +28,8 @@ WrongCat::WrongCat(WrongCat & src){
 
 WrongCat &	WrongCat::operator=(WrongCat const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

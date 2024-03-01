@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 17:48:58 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:55:12 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:56:19 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Character : public ICharacter{
 	public:
 		Character(void);
 		Character(std::string character_name);
-		Character(Character & src);
+		Character(Character const & src);
 		Character &	operator=(Character const & rhs);
 		virtual ~Character();
 		virtual std::string const & getName() const;

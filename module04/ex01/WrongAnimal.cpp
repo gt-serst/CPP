@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:43:38 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 11:56:06 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:18:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ WrongAnimal::WrongAnimal(std::string animal_type) : type(animal_type){
 	return;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal & src){
+WrongAnimal::WrongAnimal(WrongAnimal const & src){
 
 	std::cout << "Copy constructor of WrongAnimal is called" << std::endl;
 	*this = src;
@@ -34,7 +34,8 @@ WrongAnimal::WrongAnimal(WrongAnimal & src){
 
 WrongAnimal &	WrongAnimal::operator=(WrongAnimal const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

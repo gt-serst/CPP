@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:17:16 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:54:14 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:49:36 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal{
 	public:
 		Animal(void);
 		Animal(std::string animal_type);
-		Animal(Animal & src);
+		Animal(Animal const & src);
 		Animal &	operator=(Animal const & rhs);
 		virtual ~Animal(void);
 		std::string	const &	getType(void) const;

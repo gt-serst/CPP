@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 12:28:24 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/23 14:49:27 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:15:29 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ClapTrap::ClapTrap(std:: string name) : _name(name), _hit_points(100), _energy_p
 	return;
 }
 
-ClapTrap::ClapTrap(ClapTrap & src){
+ClapTrap::ClapTrap(ClapTrap const & src){
 
 	std::cout << "Copy constructor of ClapTrap called" << std::endl;
 	*this = src;
@@ -35,10 +35,13 @@ ClapTrap::ClapTrap(ClapTrap & src){
 
 ClapTrap &	ClapTrap::operator=(ClapTrap const & rhs){
 
-	this->_name = rhs._name;
-	this->_hit_points = rhs._hit_points;
-	this->_energy_points = rhs._energy_points;
-	this->_attack_damage = rhs._attack_damage;
+	if (this != &rhs)
+	{
+		this->_name = rhs._name;
+		this->_hit_points = rhs._hit_points;
+		this->_energy_points = rhs._energy_points;
+		this->_attack_damage = rhs._attack_damage;
+	}
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:42:43 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/21 15:54:57 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:54:45 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class WrongAnimal{
 	public:
 		WrongAnimal(void);
 		WrongAnimal(std::string animal_type);
-		WrongAnimal(WrongAnimal & src);
+		WrongAnimal(WrongAnimal const & src);
 		WrongAnimal &	operator=(WrongAnimal const & rhs);
 		virtual ~WrongAnimal(void);
 		std::string const &	getType(void) const;

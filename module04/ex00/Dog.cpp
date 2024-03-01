@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 15:27:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/09 11:06:45 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/01 13:17:26 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Dog::Dog(void) : Animal("Dog"){
 	return;
 }
 
-Dog::Dog(Dog & src){
+Dog::Dog(Dog const & src){
 
 	std::cout << "Copy constructor of Dog called" << std::endl;
 	*this = src;
@@ -28,7 +28,8 @@ Dog::Dog(Dog & src){
 
 Dog &	Dog::operator=(Dog const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return *this;
 }
 

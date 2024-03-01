@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geraudtserstevens <geraudtserstevens@st    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 15:44:53 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/08 23:38:10 by geraudtsers      ###   ########.fr       */
+/*   Updated: 2024/03/01 13:19:57 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cure::Cure(void) : AMateria("cure"){
 	return;
 }
 
-Cure::Cure(Cure const & src) : AMateria("cure"){
+Cure::Cure(Cure const const & src) : AMateria("cure"){
 
 	std::cout << "Copy constructor of Cure called" << std::endl;
 	*this = src;
@@ -29,7 +29,8 @@ Cure::Cure(Cure const & src) : AMateria("cure"){
 
 Cure &	Cure::operator=(Cure const & rhs){
 
-	this->type = rhs.type;
+	if (this != &rhs)
+		this->type = rhs.type;
 	return (*this);
 }
 
