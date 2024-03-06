@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:48:21 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/01 16:14:03 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:36:40 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main()
 
 	mstack.push(5);
 	mstack.push(17);
-	
+
 	std::cout << mstack.top() << std::endl;
-	
+
 	mstack.pop();
 
 	std::cout << mstack.size() << std::endl;
@@ -51,6 +51,6 @@ int main()
 	MutantStack<int> s(mstack);
 
 	std::cout << s.size() << std::endl;
-	
+
 	return (0);
 }

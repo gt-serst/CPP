@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:03:38 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/02/29 14:17:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/06 13:07:14 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ class Span{
 		void	addSeveralNumbers(std::vector<int>::const_iterator it, std::vector<int>::const_iterator ite);
 
 		class SpanIsFull : public std::exception{
-	
-			public:	
+
+			public:
 				virtual const char*	what() const throw(){
-			
+
 					return ("Span is full, cannot add number into it");
 				}
 		};
 
 		class SpanIsEmpty : public std::exception{
-		
+
 			public:
 				virtual const char*	what() const throw(){
-			
+
 					return ("Span is empty or only has one number, cannot compute distance");
 				}
 		};
@@ -51,7 +51,7 @@ class Span{
 
 	private:
 		std::vector<int>	_vec;
-		unsigned int	_size;
+		unsigned int		_size;
 };
 
 #endif

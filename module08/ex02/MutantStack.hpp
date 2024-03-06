@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 10:52:40 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/01 16:12:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:40:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,62 +14,32 @@
 # define MUTANTSTACK_HPP
 
 # include <stack>
-# include <iterator>
-# include <cstddef>
+# include <deque>
 
-template<typename T>
-class MutantStack{
-
+template <typename T>
+class MutantStack : public std::stack<T, std::deque<T> >
+{
 	public:
-		MutantStack(void);
-		MutantStack(MutantStack const & src);
-		MutantStack &	operator=(MutantStack const & rhs);
-		~MutantStack(void);
-		bool							empty(void) const;
-		unsigned int					size(void) const;
-		const T&						top(void) const;
-		void 							push(const T& val);
-		template <typename Arg> void	emplace (Arg & arg);
-		void 							pop(void);
-		void 							swap(MutantStack& x);
-
-		struct iterator
+		MutantStack() {};
+		MutantStack(MutantStack const & src):std::stack<T>(src) {};
+		~MutantStack()
 		{
-			public:	
-				iterator(T* ptr) : _ptr(ptr) { return; };
-				iterator(iterator const & src) { *this = src; return; };
-				iterator &	operator=(iterator const & rhs){ this->_ptr = rhs._ptr; return (*this); }
-				~iterator(void) { return; };
-
-				T&			operator*(void) const { return (*_ptr); }
-				T*			operator->(void) { return (_ptr); }
-
-				iterator&	operator++(void) { _ptr++; return (*this); }
-				iterator&	operator--(void) { _ptr--; return (*this); }
-
-				iterator	operator++(int) { iterator tmp = *this; ++(*this); return (tmp); }
-				iterator	operator--(int) { iterator tmp = *this; --(*this); return (tmp); }
-
-				friend bool	operator==(const iterator& a, const iterator& b) { return (a._ptr == b._ptr); };
-    			friend bool	operator!=(const iterator& a, const iterator& b) { return (a._ptr != b._ptr); };
-
-				friend bool	operator>(const iterator& a, const iterator& b) { return (a._ptr > b._ptr); };
-    			friend bool	operator<(const iterator& a, const iterator& b) { return (a._ptr < b._ptr); };
-				friend bool	operator>=(const iterator& a, const iterator& b) { return (a._ptr >= b._ptr); };
-    			friend bool	operator<=(const iterator& a, const iterator& b) { return (a._ptr <= b._ptr); };
-
-			private:
-				T*	_ptr;
+			this->c.clear();
 		};
 
-		iterator		begin(void) { return (iterator(&_stack.top() - _stack.size() + 1)); }
-    	iterator		end(void)   { return (iterator(&_stack.top() + 1)); }
+		MutantStack & operator=(MutantStack const & rhs)
+		{
+			if (this != &rhs)
+			{
+				this->c = rhs.c;
+			}
+			return (*this);
+		};
 
-	private:
-		std::stack<T>	_stack;	
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator begin() { return this->c.begin(); }
+		iterator end() { return this->c.end(); }
 };
 
-# include "MutantStack.tpp"
-
 #endif
-
