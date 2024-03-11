@@ -5,21 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 11:45:21 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/11 09:54:22 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/03/11 09:33:00 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/03/11 10:17:07 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
-bool	read_if(char **argv);
-
 int	main(int argc, char **argv)
 {
-	if (argc == 4)
-	{
-		if (!read_if(argv))
-			return (1);
-	}
+	read_csv_db(argv[1]);
 	return (0);
 }
