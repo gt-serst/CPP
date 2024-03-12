@@ -5,42 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/11 09:33:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 11:51:53 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/03/12 13:05:27 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/03/12 14:03:42 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "RPN.hpp"
 #include <iostream>
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	try
+	if (argc == 2)
 	{
-		BitcoinExchange	btc;
-		btc.read_csv_db();
-		btc.read_input_db(argv[1]);
+		try
+		{
+			RPN	rpn;
+	
+			rpn.computePostFix(argv[1]);
+		}
+		catch (RPN::Error& e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
 	}
-	/*catch (BitcoinExchange::OpenError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (BitcoinExchange::NonPositiveNumberError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}*/
-	catch (BitcoinExchange::BadInputError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	/*catch (BitcoinExchange::DuplicateDateError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
-	catch (BitcoinExchange::OutOfRangeError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}*/
 	return (0);
 }

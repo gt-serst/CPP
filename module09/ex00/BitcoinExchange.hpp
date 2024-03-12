@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:40 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/11 17:18:03 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:51:58 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ class BitcoinExchange{
 		bool				check_dup_date(std::string line);
 		bool				check_csv_value(std::string line);
 		bool				check_input_value(std::string line);
-		void				get_date_pairs(void);
+		void				get_date_pairs(std::string line, float number);
+		void				find_lower_date(std::string, float number);
 
 		class OpenError : public std::exception{
 
@@ -80,7 +81,6 @@ class BitcoinExchange{
 
 	private:
 		std::map<std::string, float>	_btc_value;
-		std::map<std::string, float>		_btc_number;
 };
 
 #endif
