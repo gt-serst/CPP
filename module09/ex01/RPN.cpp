@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 14:03:45 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:52:10 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ RPN::RPN(RPN const & src){
 
 RPN &	RPN::operator=(RPN const & rhs){
 
-	this->_stk = rhs._stk;
+	if (this != &rhs)
+		this->_stk = rhs._stk;
 	return (*this);
 }
 

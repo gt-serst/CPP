@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 11:51:55 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:52:38 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const & src){
 
 BitcoinExchange &	BitcoinExchange::operator=(BitcoinExchange const & rhs){
 
-	this->_btc_value = rhs._btc_value;
+	if (this != &rhs)
+		this->_btc_value = rhs._btc_value;
 	return (*this);
 }
 
