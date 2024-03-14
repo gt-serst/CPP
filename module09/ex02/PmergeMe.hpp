@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:44:57 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/14 12:27:25 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/14 15:49:11 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PMERGEME_HPP
 
 # include <string>
+# include <vector>
 # include <utility>
 
 template <typename T>
@@ -25,7 +26,9 @@ class PmergeMe{
 		PmergeMe &							operator=(PmergeMe const & rhs);
 		~PmergeMe(void);
 		void								mergeInsertionSort(char **argv);
-		std::vector< std::pair<int, int> >	insertionSort(T raw_array);
+		std::vector< std::pair<int, int> >	sortEachPair(T raw_array);
+		void								insertionSortPairs(std::vector< std::pair<int, int> >& A, long n);
+		void								insert(std::pair<int, int> element, std::vector< std::pair<int, int> >& A, long n);
 	private:
 		T	_S;
 };
