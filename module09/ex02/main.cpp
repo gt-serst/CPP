@@ -6,19 +6,22 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:45:17 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/13 17:05:13 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:00:37 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
+#include <deque>
+#include <vector>
 
 int	main(int argc, char **argv)
 {
-	if (argc == 2)
+	if (argc > 1)
 	{
-		PmergeMe	pmergeme;
+		PmergeMe< std::vector<int> >	fj;
 
-		pmergeme.mergeInsertionSort(argv[1]);
+		fj.mergeInsertionSort(argv);
 	}
+
 	return (0);
 }

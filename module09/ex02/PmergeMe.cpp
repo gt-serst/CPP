@@ -6,14 +6,18 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:45:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/13 17:05:10 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:27:22 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
-#include <string>
-#include <iostream>
-#include <algorithm>
+#ifndef PMERGEME_CPP
+# define PMERGEME_CPP
+# include "PmergeMe.hpp"
+# include <string>
+# include <iostream>
+# include <algorithm>
+# include <utility>
+#include <vector>
 
 template<typename T>
 PmergeMe<T>::PmergeMe(void){
@@ -32,8 +36,7 @@ template<typename T>
 PmergeMe<T> &	PmergeMe<T>::operator=(PmergeMe const & rhs){
 
 	if (this != &rhs)
-	{
-	}
+		this->_S = rhs._S;
 	return (*this);
 }
 
@@ -44,108 +47,52 @@ PmergeMe<T>::~PmergeMe(void){
 }
 
 template<typename T>
-void	PmergeMe<T>::mergeInsertionSort(std::string A){
+void	PmergeMe<T>::mergeInsertionSort(char **argv){
 
 	std::cout << "Starting Array:" << std::endl;
-	std::cout << A << std::endl;
 
-	if (A.length() % 2 != 0)
+	T	raw_array;
+	int	i = 1;
+	while (argv[i])
 	{
-		bool	hasStraggler = true;
-		char	straggler = A[A.length() - 1];
-		A.pop_back()
+		std::cout << argv[i] << std::endl;
+		raw_array.push_back(std::atoi(argv[i]));
+		i++;
 	}
-	else
-		bool	hasStraggler = false;
-	
-	T*	split_array = createPairs(A);
 
-	T*	sorted_split_array = sortEachPair(split_array);
+	std::vector< std::pair<int, int> >	split_array = insertionSort(raw_array);
 
-	sortByLargerValue(sorted_split_array);
+	//T	sorted_split_array = sortEachPair(split_array);
+
+	//std::vector< std::pair<int, int> >	sorted_split_array = sortByLargerValue(split_array);
 }
 
 template<typename T>
-T*	PmergeMe<T>::createPairs(std::string a){
+std::vector< std::pair<int, int> >	PmergeMe<T>::insertionSort(T raw_array){
 
-	T*	split_array;
-	T*	temp_array;
+	std::vector< std::pair<int, int> >	split_array;
 
-	for (size_t i = 0; i < a.length() ; i++)
+	for (size_t i = 0; i < raw_array.size() - 1; i += 2)
 	{
-		int	temp_length = temp_array.size();
-		if (temp_length == 1)
-		{
-			temp_array.push_back(a[i]);
-			split_array.push_back(temp);
-			temp_array.clear();
-		}
-		else if (split_array.size() * 2 == a.length() - 1)
-			split_array.push_back(a[i]);
-		else if (temp_length == 0)
-			temp_array.push_back(a[i]);
+		if (raw_array[i] > raw_array[i + 1])
+			std::swap(raw_array[i], raw_array[i + 1]);
+		split_array.push_back(std::make_pair(raw_array[i], raw_array[i + 1]));
 	}
+	std::pair<int, int> first_pair = split_array.front();
+	std::pair<int, int> last_pair = split_array.back();
+
+	std::cout << "First pair : (" << first_pair.first << ", " << first_pair.second << ")" << std::endl;
+	std::cout << "Last pair : (" << last_pair.first << " , " << last_pair.second << ")" << std::endl;
 	return (split_array);
 }
 
-template<typename T>
-T*	PmergeMe<T>::sortEachPair(T* split_array){
+void	PmergeMe<T>::jacobshtalNumbers(void){
 
-	for (T::iterator it = split_array.begin(); it != split_array.end(); ++it)
-	{
-		T const & pair_array = *it;
-		for (T::iterator it_pair = pair_array.begin(); it_pair != pair_array.end(); ++it_pair)
-		{
-			if (pair_array.size() != 1 && it_pair->first > it_pair->second)
-				swap(it_pair->first, it_pair->second);
-		}
-	}
-	return (split_array);
-}
 
-template<typename T>
-void	PmergeMe<T>::sortByLargerValue(T* sorted_split_array){
-
-	int	length = sorted_split_array.size();
-
-	insertionSortPairs(sorted_split_array, sorted_split_array.size() - 1);
-}
-
-template<typename T>
-void	PmergeMe<T>::insertionSortPairs(T* A, int n){
-
-	if (n < 1)
-		return;
-	else
-	{
-		T::iterator it = A.begin();
-		++it;
-		insertionSortPairs(A, it);
-	}
-}
-
-template<typename T>
-void	PmergeMe<T>::insertionSortPairs(T* A, T::iterator it){
-
-	if (it == A.end())
-		return;
-	std::pair<int, int> temp = *it;
-	A.erase(it);
-	insert(temp, A, A.begin());
-	insertionSortPairs(A, ++it);
-}
-
-template<typename T>
-void	PmergeMe<T>::insert(std::pair<int, int> const & elem, T& A, T::iterator it){
-
-	if (elem.second >= it->second)
-		A.insert(++it, elem);
-	else
-		insert(elem, A, ++it);
 }
 
 /*template<typename T>
-void	PmergeMe<T>::sorting(char *argv){
+void	PmergeMe<T>::mergeInsertionSort(char **argv){
 
 	//insertionSort();
 	//jacobsthaNumbers();
@@ -178,3 +125,4 @@ void	PmergeMe<T>::binarySearch(void){
 
 	//binary search with the indexes compute during the Jacobsthal sequence
 }*/
+#endif
