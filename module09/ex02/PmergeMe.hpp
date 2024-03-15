@@ -6,7 +6,7 @@
 /*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:44:57 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/14 15:49:11 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:01:46 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ class PmergeMe{
 		std::vector< std::pair<int, int> >	sortEachPair(T raw_array);
 		void								insertionSortPairs(std::vector< std::pair<int, int> >& A, long n);
 		void								insert(std::pair<int, int> element, std::vector< std::pair<int, int> >& A, long n);
+		T									createSequence(std::vector< std::pair<int, int> > sorted_split_array, int straggler);
+		std::vector<long>					buildJacobInsertionSequence(T pend);
+		long								jacobsthal(long n);
 	private:
 		T	_S;
 };
