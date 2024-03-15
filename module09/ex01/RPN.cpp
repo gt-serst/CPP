@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/13 12:52:10 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:37:13 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	RPN::computePostFix(std::string expr){
 		else if(isOperand(*it) == 1)
 			_stk.push(ctoi(*it));
 		else if (!isspace(*it))
-		   throw RPN::Error();
+			throw RPN::Error();
 	}
 	std::cout << _stk.top() << std::endl;
 }
