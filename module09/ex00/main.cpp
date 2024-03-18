@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:33:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 11:51:53 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:25:15 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,21 @@ int	main(int argc, char **argv)
 	try
 	{
 		BitcoinExchange	btc;
-		btc.read_csv_db();
-		btc.read_input_db(argv[1]);
+
+		btc.readCsvDb();
+		btc.readInputDb(argv[1]);
 	}
-	/*catch (BitcoinExchange::OpenError& e)
+	catch (BitcoinExchange::OpenError& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch (BitcoinExchange::NonPositiveNumberError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}*/
 	catch (BitcoinExchange::BadInputError& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	/*catch (BitcoinExchange::DuplicateDateError& e)
+	catch (BitcoinExchange::DuplicateDateError& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	catch (BitcoinExchange::OutOfRangeError& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}*/
 	return (0);
 }

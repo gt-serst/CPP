@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_of.cpp                                       :+:      :+:    :+:   */
+/*   writeOf.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 14:03:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/01/12 15:51:52 by gt-serst         ###   ########.fr       */
+/*   Created: 2024/03/18 14:07:53 by gt-serst          #+#    #+#             */
+/*   Updated: 2024/03/18 14:07:55 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <fstream>
 
-bool	write_of(std::string filename, std::string sed_str)
+bool	writeOf(std::string filename, std::string sed_str)
 {
 	std::ofstream ofs(filename.append(".replace"));
 	if (ofs.is_open())

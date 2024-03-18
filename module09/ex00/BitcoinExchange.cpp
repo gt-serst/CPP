@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/13 12:52:38 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:26:01 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ BitcoinExchange::~BitcoinExchange(void){
 	return;
 }
 
-void	BitcoinExchange::read_csv_db(void){
+void	BitcoinExchange::readCsvDb(void){
 
-	int				length;	
+	int				length;
 	std::ifstream	ifs;
-	
+
 	ifs.open("data.csv", std::ifstream::binary);
 	if (ifs)
 	{
@@ -57,39 +57,34 @@ void	BitcoinExchange::read_csv_db(void){
 	if (line.compare("date,exchange_rate") == 0)
 	{
 		while (std::getline(ifs, line))
-		{
-			try
-			{
-				csv_db_checker(line);
-			}
-			catch (BitcoinExchange::OpenError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::NonPositiveNumberError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::BadInputError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::DuplicateDateError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::OutOfRangeError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-		}
+			tryCsv(line);
 	}
 	else
 		throw BitcoinExchange::BadInputError();
 	ifs.close();
 }
 
-void	BitcoinExchange::read_input_db(char *argv){
+void	BitcoinExchange::tryCsv(std::string line){
+
+	try
+	{
+		csvDbChecker(line);
+	}
+	catch (BitcoinExchange::NonPositiveNumberError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (BitcoinExchange::BadInputError& e)
+	{
+		std::cerr << e.what() << " => " << line.substr(0, 10).c_str() << std::endl;
+	}
+	catch (BitcoinExchange::OutOfRangeError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	BitcoinExchange::readInputDb(char *argv){
 
 	int				length;
 	std::ifstream	ifs;
@@ -108,105 +103,111 @@ void	BitcoinExchange::read_input_db(char *argv){
 	if (line.compare("date | value") == 0)
 	{
 		while (std::getline(ifs, line))
-		{
-			try
-			{
-				input_db_checker(line);
-			}
-			catch (BitcoinExchange::OpenError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::NonPositiveNumberError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::BadInputError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::DuplicateDateError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-			catch (BitcoinExchange::OutOfRangeError& e)
-			{
-				std::cerr << e.what() << std::endl;
-			}
-		}
+			tryInput(line);
 	}
 	else
 		throw BitcoinExchange::BadInputError();
 	ifs.close();
 }
 
-bool	BitcoinExchange::csv_db_checker(std::string line){
+void	BitcoinExchange::tryInput(std::string line){
 
-	if (!check_date(line))
+	try
+	{
+		InputDbChecker(line);
+	}
+	catch (BitcoinExchange::NonPositiveNumberError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (BitcoinExchange::BadInputError& e)
+	{
+		std::cerr << e.what() << " => " << line.substr(0, 10).c_str() << std::endl;
+	}
+	catch (BitcoinExchange::OutOfRangeError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+bool	BitcoinExchange::csvDbChecker(std::string line){
+
+	if (!checkDate(line))
 		return (throw BitcoinExchange::BadInputError(), false);
-	else if (!check_dup_date(line) || !check_csv_value(line))
+	else if (!checkDupDate(line) || !checkCsvValue(line))
 		return (false);
 	this->_btc_value[line.substr(0, 10)] = std::atof(line.substr(11, line.size() - 10).c_str());
 	return (true);
 }
 
-bool	BitcoinExchange::input_db_checker(std::string line){
+bool	BitcoinExchange::InputDbChecker(std::string line){
 
-	if (!check_date(line))
+	if (!checkDate(line))
 		return (throw BitcoinExchange::BadInputError(), false);
-	else if (!check_input_value(line))
+	else if (!checkInputValue(line))
 		return (false);
-	get_date_pairs(line.substr(0, 10), std::atof(line.substr(12, line.size() - 11).c_str()));
+	getDatePairs(line.substr(0, 10), std::atof(line.substr(12, line.size() - 11).c_str()));
 	return (true);
 }
 
-bool	BitcoinExchange::check_date(std::string line){
+bool	BitcoinExchange::checkDate(std::string line){
 
-	std::string	substr;
-	int			year;
-	int			month;
-	int			day;
+	int year, month, day;
 
-	year = std::atoi(line.substr(0, 4).c_str());
+	if (!parseYear(line, year) || !parseMonth(line, month) || !parseDay(line, day))
+		return (false);
 	if (year < 2009 || year > 2024)
 		return (false);
-	substr = line.substr(4, 1);
-	if (substr.compare("-") != 0)
+	if (month < 1 || month > 12)
 		return (false);
-	month = std::atoi(line.substr(5, 2).c_str());
-	if (month < 0 || month > 12)
-		return (false);
-	substr = line.substr(7, 1);
-	if (substr.compare("-") != 0)
-		return (false);
-	day = std::atoi(line.substr(8, 2).c_str());
 	if (month == 2)
 	{
-		if (year % 4 != 0)
-		{
-			if (day < 0 || day > 28)
-				return (false);
-		}
-		else
-		{
-			if (day < 0 || day > 29)
-				return (false);
-		}
-	}
-	else if (month == 4 || month == 6 || month == 9 || month == 11)
-	{
-		if (day < 0 || day > 30)
+		if (!isValidDayForFebruary(year, day))
 			return (false);
 	}
 	else
 	{
-		if (day < 0 || day > 31)
+		if (!isValidDayForMonth(month, day))
 			return (false);
 	}
 	return (true);
 }
 
-bool	BitcoinExchange::check_dup_date(std::string line){
+bool	BitcoinExchange::parseYear(const std::string& line, int& year){
+
+	year = std::atoi(line.substr(0, 4).c_str());
+	return (line.size() >= 4 && line[4] == '-' && year != 0);
+}
+
+bool	BitcoinExchange::parseMonth(const std::string& line, int& month){
+
+	month = std::atoi(line.substr(5, 2).c_str());
+	return (line.size() >= 7 && line[7] == '-' && month >= 1 && month <= 12);
+}
+
+bool	BitcoinExchange::parseDay(const std::string& line, int& day){
+
+	day = std::atoi(line.substr(8, 2).c_str());
+	return (line.size() >= 10 && day >= 1 && day <= 31);
+}
+
+bool	BitcoinExchange::isValidDayForFebruary(int year, int day){
+
+	if (year % 4 != 0 && day > 28)
+		return (false);
+	if (year % 4 == 0 && day > 29)
+		return (false);
+	return (true);
+}
+
+bool BitcoinExchange::isValidDayForMonth(int month, int day){
+
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+		return (false);
+	return (true);
+}
+
+bool	BitcoinExchange::checkDupDate(std::string line){
 
 	if (this->_btc_value.empty())
 		return (true);
@@ -222,7 +223,7 @@ bool	BitcoinExchange::check_dup_date(std::string line){
 	return (true);
 }
 
-bool	BitcoinExchange::check_csv_value(std::string line){
+bool	BitcoinExchange::checkCsvValue(std::string line){
 
 	std::string		substr;
 	float			value;
@@ -233,24 +234,26 @@ bool	BitcoinExchange::check_csv_value(std::string line){
 	value = std::atof(line.substr(11, line.size() - 10).c_str());
 	if (value < 0 || value > INT_MAX)
 		return (throw BitcoinExchange::OutOfRangeError(), false);
-	return (true);	
+	return (true);
 }
 
-bool	BitcoinExchange::check_input_value(std::string line){
+bool	BitcoinExchange::checkInputValue(std::string line){
 
 	std::string		substr;
 	float			value;
 
-	substr = line.substr(10, 3);	
+	substr = line.substr(10, 3);
 	if (substr.compare(" | ") != 0)
 		return (throw BitcoinExchange::BadInputError(), false);
 	value = std::atof(line.substr(13, line.size() - 12).c_str());
-	if (value < 0 || value > 1000)
+	if (value < 0)
+		return (throw BitcoinExchange::NonPositiveNumberError(), false);
+	else if (value > 1000)
 		return (throw BitcoinExchange::OutOfRangeError(), false);
-	return (true);	
+	return (true);
 }
 
-void	BitcoinExchange::get_date_pairs(std::string line, float number){
+void	BitcoinExchange::getDatePairs(std::string line, float number){
 
 	for (std::map<std::string, float>::iterator it1 = this->_btc_value.begin(); it1 != this->_btc_value.end(); ++it1)
 	{
@@ -260,14 +263,14 @@ void	BitcoinExchange::get_date_pairs(std::string line, float number){
 			return;
 		}
 	}
-	find_lower_date(line, number);
+	findLowerDate(line, number);
 }
 
-void	BitcoinExchange::find_lower_date(std::string line, float number){
+void	BitcoinExchange::findLowerDate(std::string line, float number){
 
 	int	min_difference = std::numeric_limits<int>::max();
 	std::map<std::string, float>::iterator	nearest_date;
-	
+
 	for (std::map<std::string, float>::iterator it = this->_btc_value.begin(); it != this->_btc_value.end(); ++it)
 	{
 		int year, month, day;

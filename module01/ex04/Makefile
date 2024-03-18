@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/01/12 14:22:45 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/03/18 14:09:56 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
-		  read_if.cpp\
-		  replace_occ.cpp\
-		  write_of.cpp
+		  readIf.cpp\
+		  replaceOcc.cpp\
+		  writeOf.cpp
 
 NAME	= Sed
 
