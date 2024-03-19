@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 11:19:04 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:14:09 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,11 @@ int	RPN::operation(int right, int left, char op){
 	else if (op == '-')
 		return (left - right);
 	else if (op == '/')
+	{
+		if (right == 0)
+			throw(RPN::Error());
 		return (left / right);
+	}
 	else if (op == '*')
 		return (left * right);
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 14:03:42 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:18:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 		try
 		{
 			RPN	rpn;
-	
+
 			rpn.computePostFix(argv[1]);
 		}
 		catch (RPN::Error& e)
@@ -28,5 +28,7 @@ int	main(int argc, char **argv)
 			std::cerr << e.what() << std::endl;
 		}
 	}
+	else
+		std::cerr << "Error: " << argv[0] << " takes 1 argument" << std::endl;
 	return (0);
 }
