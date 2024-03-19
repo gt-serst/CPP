@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gt-serst <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:10 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/12 14:03:43 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:19:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class RPN{
 		int		isOperator(char c);
 		int		isOperand(char c);
 		int		ctoi(char c);
-		int		operation(int a, int b, char op);
-		
+		int		operation(int right, int left, char op);
+
 		class Error : public std::exception{
 
 			public:
@@ -39,7 +39,7 @@ class RPN{
 		};
 
 	private:
-		std::stack<float>	_stk;	
+		std::stack<float>	_stk;
 
 };
 

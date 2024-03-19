@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:33:00 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/18 14:25:15 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:05:18 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@ int	main(int argc, char **argv)
 		std::cerr << e.what() << std::endl;
 	}
 	catch (BitcoinExchange::DuplicateDateError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (BitcoinExchange::NonPositiveNumberError& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	catch (BitcoinExchange::OutOfRangeError& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

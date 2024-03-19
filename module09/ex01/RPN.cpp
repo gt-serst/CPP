@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/15 15:37:13 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:19:04 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,19 @@ RPN::~RPN(void){
 
 void	RPN::computePostFix(std::string expr){
 
-	int						a;
-	int						b;
+	int						right;
+	int						left;
 	std::string::iterator	it;
 
 	for (it = expr.begin(); it != expr.end(); ++it)
 	{
 		if (isOperator(*it) == 1)
 		{
-			a = _stk.top();
+			right = _stk.top();
 			_stk.pop();
-			b = _stk.top();
+			left = _stk.top();
 			_stk.pop();
-			_stk.push(operation(a, b, *it));
+			_stk.push(operation(right, left, *it));
 		}
 		else if(isOperand(*it) == 1)
 			_stk.push(ctoi(*it));
@@ -85,16 +85,16 @@ int	RPN::ctoi(char c){
 	return (static_cast<int>(value - '0'));
 }
 
-int	RPN::operation(int a, int b, char op){
+int	RPN::operation(int right, int left, char op){
 
 	if (op == '+')
-		return (b + a);
+		return (left + right);
 	else if (op == '-')
-		return (b - a);
+		return (left - right);
 	else if (op == '/')
-		return (b / a);
+		return (left / right);
 	else if (op == '*')
-		return (b * a);
+		return (left * right);
 	else
 		throw RPN::Error();
 }

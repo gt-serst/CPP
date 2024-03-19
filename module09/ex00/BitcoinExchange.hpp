@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:40 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/18 14:19:23 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:05:45 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class BitcoinExchange{
 		~BitcoinExchange(void);
 		void				readCsvDb(void);
 		void				readInputDb(char *argv);
-		void				tryCsv(std::string line);
 		void				tryInput(std::string line);
 		bool				csvDbChecker(std::string line);
 		bool				InputDbChecker(std::string line);
