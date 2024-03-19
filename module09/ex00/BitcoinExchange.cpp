@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 11:16:30 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:32:15 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	BitcoinExchange::readInputDb(char *argv){
 	ifs.close();
 }
 
-void	BitcoinExchange::tryInput(std::string line){
+void	BitcoinExchange::tryInput(const std::string line){
 
 	try
 	{
@@ -110,7 +110,7 @@ void	BitcoinExchange::tryInput(std::string line){
 	}
 }
 
-bool	BitcoinExchange::csvDbChecker(std::string line){
+bool	BitcoinExchange::csvDbChecker(const std::string line){
 
 	if (!checkDate(line))
 		return (throw BitcoinExchange::BadInputError(), false);
@@ -120,7 +120,7 @@ bool	BitcoinExchange::csvDbChecker(std::string line){
 	return (true);
 }
 
-bool	BitcoinExchange::InputDbChecker(std::string line){
+bool	BitcoinExchange::InputDbChecker(const std::string line){
 
 	if (!checkDate(line))
 		return (throw BitcoinExchange::BadInputError(), false);
@@ -130,7 +130,7 @@ bool	BitcoinExchange::InputDbChecker(std::string line){
 	return (true);
 }
 
-bool	BitcoinExchange::checkDate(std::string line){
+bool	BitcoinExchange::checkDate(const std::string line){
 
 	int year, month, day;
 
@@ -187,7 +187,7 @@ bool BitcoinExchange::isValidDayForMonth(int month, int day){
 	return (true);
 }
 
-bool	BitcoinExchange::checkDupDate(std::string line){
+bool	BitcoinExchange::checkDupDate(const std::string line){
 
 	if (this->_btc_value.empty())
 		return (true);
@@ -203,7 +203,7 @@ bool	BitcoinExchange::checkDupDate(std::string line){
 	return (true);
 }
 
-bool	BitcoinExchange::checkCsvValue(std::string line){
+bool	BitcoinExchange::checkCsvValue(const std::string line){
 
 	int			i;
 	std::string	substr;
@@ -227,7 +227,7 @@ bool	BitcoinExchange::checkCsvValue(std::string line){
 	return (true);
 }
 
-bool	BitcoinExchange::checkInputValue(std::string line){
+bool	BitcoinExchange::checkInputValue(const std::string line){
 
 	int			i;
 	std::string	substr;
@@ -251,7 +251,7 @@ bool	BitcoinExchange::checkInputValue(std::string line){
 	return (true);
 }
 
-void	BitcoinExchange::getDatePairs(std::string line, float number){
+void	BitcoinExchange::getDatePairs(const std::string line, float number){
 
 	for (std::map<std::string, float>::iterator it = this->_btc_value.begin(); it != this->_btc_value.end(); ++it)
 	{
@@ -264,7 +264,7 @@ void	BitcoinExchange::getDatePairs(std::string line, float number){
 	findLowerDate(line, number);
 }
 
-void	BitcoinExchange::findLowerDate(std::string line, float number){
+void	BitcoinExchange::findLowerDate(const std::string line, float number){
 
 	int	min_difference = std::numeric_limits<int>::max();
 	std::map<std::string, float>::iterator	nearest_date;

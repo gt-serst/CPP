@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:32:40 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 11:05:45 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:32:49 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@ class BitcoinExchange{
 		~BitcoinExchange(void);
 		void				readCsvDb(void);
 		void				readInputDb(char *argv);
-		void				tryInput(std::string line);
-		bool				csvDbChecker(std::string line);
-		bool				InputDbChecker(std::string line);
-		bool				checkDate(std::string line);
+		void				tryInput(const std::string line);
+		bool				csvDbChecker(const std::string line);
+		bool				InputDbChecker(const std::string line);
+		bool				checkDate(const std::string line);
 		bool				parseYear(const std::string& line, int& year);
 		bool				parseMonth(const std::string& line, int& month);
 		bool				parseDay(const std::string& line, int& day);
 		bool				isValidDayForFebruary(int year, int day);
 		bool 				isValidDayForMonth(int month, int day);
-		bool				checkDupDate(std::string line);
-		bool				checkCsvValue(std::string line);
-		bool				checkInputValue(std::string line);
-		void				getDatePairs(std::string line, float number);
-		void				findLowerDate(std::string, float number);
+		bool				checkDupDate(const std::string line);
+		bool				checkCsvValue(const std::string line);
+		bool				checkInputValue(const std::string line);
+		void				getDatePairs(const std::string line, float number);
+		void				findLowerDate(const std::string, float number);
 
 		class OpenError : public std::exception{
 
