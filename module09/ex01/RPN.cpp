@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/20 16:35:44 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:41:31 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void	RPN::computePostFix(std::string expr){
 		else if (!isspace(*it))
 			throw RPN::Error();
 	}
-	std::cout << _stk.top() << std::endl;
+	if (!this->_stk.empty() && this->_stk.size() == 1)
+		std::cout << _stk.top() << std::endl;
 }
 
 int	RPN::isOperator(char c){
