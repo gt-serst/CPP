@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:20 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 15:14:09 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:35:44 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	RPN::computePostFix(std::string expr){
 	{
 		if (isOperator(*it) == 1)
 		{
+			if (this->_stk.empty() || this->_stk.size() < 2)
+				throw RPN::Error();
 			right = _stk.top();
 			_stk.pop();
 			left = _stk.top();
@@ -94,7 +96,7 @@ int	RPN::operation(int right, int left, char op){
 	else if (op == '/')
 	{
 		if (right == 0)
-			throw(RPN::Error());
+			throw(RPN::NullDivisionError());
 		return (left / right);
 	}
 	else if (op == '*')

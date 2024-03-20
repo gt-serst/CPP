@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:10 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 11:19:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:35:10 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,24 @@ class RPN{
 				virtual const char*	what() const throw(){
 
 					return ("Error");
+				}
+		};
+
+		class InputError : public std::exception{
+
+			public:
+				virtual const char*	what() const throw(){
+
+					return ("Error: number is equal or greater than 10");
+				}
+		};
+
+		class NullDivisionError : public std::exception{
+
+			public:
+				virtual const char*	what() const throw(){
+
+					return ("Error: attempting to divide by 0");
 				}
 		};
 
