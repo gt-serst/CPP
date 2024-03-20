@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:05:27 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/19 15:18:18 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:21:25 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	main(int argc, char **argv)
 		}
 	}
 	else
-		std::cerr << "Error: " << argv[0] << " takes 1 argument" << std::endl;
+		std::cerr << "Error: " << argv[0] << " only takes 1 argument" << std::endl;
 	return (0);
 }
