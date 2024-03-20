@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:45:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/18 13:43:05 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:14:41 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ PmergeMe::~PmergeMe(void){
 
 void	PmergeMe::mergeInsertionSort(char **argv, std::deque<int>& deq){
 
-	int				i;
+	size_t			i;
 	int				straggler;
 	std::deque<int>	raw_array;
 
@@ -151,64 +151,15 @@ std::deque<int>	PmergeMe::createSequence(std::deque< std::pair<int, int> > sorte
 	}
 	std::cout << ")" << std::endl;*/
 
-	S.insert(S.begin(), pend[0]);
-
-	std::deque<long>	jacob_insertion_sequence = buildJacobInsertionSequence(pend);
-
-	/*if (!jacob_insertion_sequence.empty())
-	{
-		std::cout << "Jacobsthal numbers:" << std::endl;
-		std::cout << "(";
-		for (size_t i = 0; i < jacob_insertion_sequence.size(); ++i) {
-			std::cout <<  jacob_insertion_sequence[i];
-			if (i < jacob_insertion_sequence.size() - 1)
-				std::cout << ", ";
-		}
-		std::cout << ")" << std::endl;
-	}*/
-
-	long				i;
-	int					jacob_index;
-	bool				last;
-	int					item;
-	std::deque<long>	index_sequence;
+	size_t	i;
 
 	i = 0;
-	jacob_index = 3;
-	index_sequence.push_back(1);
-	while (i <= static_cast<long>(pend.size()))
+	while (i < pend.size())
 	{
-		item = -1;
-		last = false;
-		if (!jacob_insertion_sequence.empty() && !last)
-		{
-			index_sequence.push_back(jacob_insertion_sequence[0]);
-			item = pend[jacob_insertion_sequence[0] - 1];
-			jacob_insertion_sequence.erase(jacob_insertion_sequence.begin());
-			last = true;
-		}
-		else
-		{
-			if (std::find(index_sequence.begin(), index_sequence.end(), i) != index_sequence.end())
-				i++;
-			if (i != 0 && i - 1 < static_cast<long>(pend.size()))
-			{
-				item = pend[i - 1];
-				index_sequence.push_back(i);
-				last = false;
-			}
-		}
-
-		if (i != 0 && item != -1)
-		{
-			std::deque<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), item);
-			S.insert(insertion_point, item);
-		}
-
+		std::deque<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), pend[i]);
+		S.insert(insertion_point, pend[i]);
 		i++;
-		jacob_index++;
 	}
-
 	if (straggler != -1)
 	{
 		std::deque<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), straggler);
@@ -218,25 +169,9 @@ std::deque<int>	PmergeMe::createSequence(std::deque< std::pair<int, int> > sorte
 	return (S);
 }
 
-std::deque<long>	PmergeMe::buildJacobInsertionSequence(std::deque<int> pend){
-
-	long				len;
-	long				jacob_index;
-	std::deque<long>	end_sequence;
-
-	len = pend.size();
-	jacob_index = 3;
-	while (jacobsthal(jacob_index) < len - 1)
-	{
-		end_sequence.push_back(jacobsthal(jacob_index));
-		jacob_index += 1;
-	}
-	return (end_sequence);
-}
-
 void	PmergeMe::mergeInsertionSort(char **argv, std::vector<int>& vect){
 
-	int					i;
+	size_t				i;
 	int					straggler;
 	std::vector<int>	raw_array;
 
@@ -313,52 +248,15 @@ std::vector<int>	PmergeMe::createSequence(std::vector< std::pair<int, int> > sor
 		pend.push_back(sorted_split_array[i].first);
 	}
 
-	S.insert(S.begin(), pend[0]);
-
-	std::vector<long>	jacob_insertion_sequence = buildJacobInsertionSequence(pend);
-
-	long				i;
-	int					jacob_index;
-	bool				last;
-	int					item;
-	std::vector<long>	index_sequence;
+	size_t	i;
 
 	i = 0;
-	jacob_index = 3;
-	index_sequence.push_back(1);
-	while (i <= static_cast<long>(pend.size()))
+	while (i < pend.size())
 	{
-		item = -1;
-		last = false;
-		if (!jacob_insertion_sequence.empty() && !last)
-		{
-			index_sequence.push_back(jacob_insertion_sequence[0]);
-			item = pend[jacob_insertion_sequence[0] - 1];
-			jacob_insertion_sequence.erase(jacob_insertion_sequence.begin());
-			last = true;
-		}
-		else
-		{
-			if (std::find(index_sequence.begin(), index_sequence.end(), i) != index_sequence.end())
-				i++;
-			if (i != 0 && i - 1 < static_cast<long>(pend.size()))
-			{
-				item = pend[i - 1];
-				index_sequence.push_back(i);
-				last = false;
-			}
-		}
-
-		if (i != 0 && item != -1)
-		{
-			std::vector<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), item);
-			S.insert(insertion_point, item);
-		}
-
+		std::vector<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), pend[i]);
+		S.insert(insertion_point, pend[i]);
 		i++;
-		jacob_index++;
 	}
-
 	if (straggler != -1)
 	{
 		std::vector<int>::iterator insertion_point = std::upper_bound(S.begin(), S.end(), straggler);
@@ -366,30 +264,4 @@ std::vector<int>	PmergeMe::createSequence(std::vector< std::pair<int, int> > sor
 	}
 
 	return (S);
-}
-
-std::vector<long>	PmergeMe::buildJacobInsertionSequence(std::vector<int> pend){
-
-	long				len;
-	long				jacob_index;
-	std::vector<long>	end_sequence;
-
-	len = pend.size();
-	jacob_index = 3;
-	while (jacobsthal(jacob_index) < len - 1)
-	{
-		end_sequence.push_back(jacobsthal(jacob_index));
-		jacob_index += 1;
-	}
-	return (end_sequence);
-}
-
-long	PmergeMe::jacobsthal(long n){
-
-	if (n == 0)
-		return (0);
-	else if (n == 1)
-		return (1);
-	else
-		return (jacobsthal(n - 1) + 2 * jacobsthal(n - 2));
 }
