@@ -6,7 +6,7 @@
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:45:05 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/20 15:14:41 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/03/21 09:45:07 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	PmergeMe::mergeInsertionSort(char **argv, std::deque<int>& deq){
 	if (raw_array.size() == 1)
 	{
 		deq = raw_array;
-		return ;
+		return;
 	}
 	if (raw_array.size() % 2 != 0)
 	{
@@ -184,7 +184,7 @@ void	PmergeMe::mergeInsertionSort(char **argv, std::vector<int>& vect){
 	if (raw_array.size() == 1)
 	{
 		vect = raw_array;
-		return ;
+		return;
 	}
 	if (raw_array.size() % 2 != 0)
 	{
