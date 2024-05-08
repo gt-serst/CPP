@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replaceOcc.cpp                                     :+:      :+:    :+:   */
+/*   replaceOccurence.cpp                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:07:49 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/18 14:07:51 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:51:17 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
-bool	writeOf(std::string filename, std::string buf);
+bool	writeOuputFile(std::string filename, std::string buf);
 
-bool	replaceOcc(std::string buf, std::string filename, std::string str_to_find, std::string replacement_str)
+bool	replaceOccurence(std::string buf, std::string filename, std::string str_to_find, std::string replacement_str)
 {
 	std::size_t pos;
 	std::size_t last_pos;
@@ -33,7 +33,7 @@ bool	replaceOcc(std::string buf, std::string filename, std::string str_to_find, 
 		pos = buf.find(str_to_find, last_pos);
 	}
 	sed_str.append(buf.substr(last_pos));
-	if (!writeOf(filename, sed_str))
+	if (!writeOuputFile(filename, sed_str))
 		return (false);
 	return (true);
 }

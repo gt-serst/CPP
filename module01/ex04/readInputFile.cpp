@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   readIf.cpp                                         :+:      :+:    :+:   */
+/*   readInputFile.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:07:45 by gt-serst          #+#    #+#             */
-/*   Updated: 2024/03/18 14:07:47 by gt-serst         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:51:03 by gt-serst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <iostream>
 #include <fstream>
 
-bool	replaceOcc(std::string buf, std::string filename, std::string str_to_find, std::string replacement_str);
+bool	replaceOccurence(std::string buf, std::string filename, std::string str_to_find, std::string replacement_str);
 
-bool	readIf(char **argv)
+bool	readInputFile(char **argv)
 {
 	int	length;
 	std::ifstream ifs;
@@ -35,7 +35,7 @@ bool	readIf(char **argv)
 	if (!ifs)
 		return (std::cout << "error: cannot read all the characters" << std::endl, false);
 	ifs.close();
-	if (!replaceOcc(buffer, argv[1], argv[2], argv[3]))
+	if (!replaceOccurence(buffer, argv[1], argv[2], argv[3]))
 		return (delete[] buffer, false);
 	delete[] buffer;
 	return (true);

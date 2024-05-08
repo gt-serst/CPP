@@ -6,14 +6,14 @@
 #    By: gt-serst <gt-serst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/05 14:37:35 by gt-serst          #+#    #+#              #
-#    Updated: 2024/03/18 14:09:56 by gt-serst         ###   ########.fr        #
+#    Updated: 2024/05/08 13:52:05 by gt-serst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp\
-		  readIf.cpp\
-		  replaceOcc.cpp\
-		  writeOf.cpp
+		  readInputFile.cpp\
+		  replaceOccurence.cpp\
+		  writeOuputFile.cpp
 
 NAME	= Sed
 
